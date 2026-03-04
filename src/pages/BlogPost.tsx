@@ -90,7 +90,7 @@ export default function BlogPost() {
       {/* Article Body */}
       <section className="py-12 lg:py-16">
         <div className="container mx-auto px-4">
-          <article className="max-w-3xl mx-auto prose prose-lg prose-stone prose-headings:font-heading prose-headings:text-foreground prose-p:text-muted-foreground prose-p:leading-relaxed prose-strong:text-foreground prose-a:text-primary hover:prose-a:text-primary/80 prose-li:text-muted-foreground prose-th:text-foreground prose-td:text-muted-foreground prose-hr:border-border">
+          <article className="max-w-3xl mx-auto prose prose-lg prose-stone prose-headings:font-heading prose-headings:text-foreground prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:md:text-2xl prose-h3:mt-8 prose-h3:mb-3 prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-5 prose-strong:text-foreground prose-a:text-primary hover:prose-a:text-primary/80 prose-li:text-muted-foreground prose-ul:my-4 prose-ol:my-4 prose-th:text-foreground prose-td:text-muted-foreground prose-table:my-6 prose-hr:border-border prose-blockquote:border-primary/30 prose-blockquote:text-muted-foreground">
             <ReactMarkdown>{post.content}</ReactMarkdown>
           </article>
         </div>
