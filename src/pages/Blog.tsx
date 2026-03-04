@@ -2,11 +2,42 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ContactForm } from "@/components/ContactForm";
+import { SEO } from "@/components/SEO";
+import { Helmet } from "react-helmet-async";
 import { blogPosts, formatDate } from "@/data/blogPosts";
 
 export default function Blog() {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Flooring Blog — Tips, Guides & Advice"
+        description="Honest flooring advice from Floor'd in Little Rock, AR. Tips on hardwood, LVP, tile, carpet, costs, and choosing the right floors for your home."
+        canonical="/blog"
+      />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            name: "Floor'd Blog",
+            description: "Flooring tips, guides, and advice from Floor'd in Little Rock, AR.",
+            url: "https://floordflooringandfinishes.com/blog",
+            publisher: {
+              "@type": "Organization",
+              name: "Floor'd Flooring + Finishes",
+              url: "https://floordflooringandfinishes.com",
+            },
+            blogPost: blogPosts.map((p) => ({
+              "@type": "BlogPosting",
+              headline: p.title,
+              description: p.excerpt,
+              datePublished: p.date,
+              url: `https://floordflooringandfinishes.com/blog/${p.slug}`,
+            })),
+          })}
+        </script>
+      </Helmet>
       <Header />
 
       {/* Hero */}
@@ -77,6 +108,8 @@ export default function Blog() {
           </div>
         </div>
       </section>
+
+      <ContactForm compact heading="Ready to Start Your Project?" subheading="Get a free estimate from Floor'd — no pressure, just honest advice." />
 
       <Footer />
     </div>

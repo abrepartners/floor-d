@@ -28,7 +28,7 @@ export function CTA() {
                 </div>
                 <div>
                   <p className="font-heading text-lg">Visit Our Showroom</p>
-                  <p className="text-background/60 text-sm">11915 I-30 Frontage Rd, Little Rock, AR 72209</p>
+                  <p className="text-background/60 text-sm">11915 I-30 Frontage Rd, Suite D, Little Rock, AR 72209</p>
                 </div>
               </div>
               <div className="flex items-start gap-4 group">
@@ -48,7 +48,7 @@ export function CTA() {
                 </div>
                 <div>
                   <p className="font-heading text-lg">Showroom Hours</p>
-                  <p className="text-background/60 text-sm">Mon–Sat: 9AM–6PM &nbsp;|&nbsp; Sun: 11AM–5PM</p>
+                  <p className="text-background/60 text-sm">Mon–Sat: 8AM–8PM &nbsp;|&nbsp; Sun: Closed</p>
                 </div>
               </div>
             </div>

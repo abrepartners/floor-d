@@ -3,6 +3,8 @@ import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ContactForm } from "@/components/ContactForm";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { getBlogPost, blogPosts, formatDate } from "@/data/blogPosts";
 
@@ -19,6 +21,34 @@ export default function BlogPost() {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        canonical={`/blog/${post.slug}`}
+        type="article"
+        publishedTime={post.date}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: post.title,
+          description: post.excerpt,
+          datePublished: post.date,
+          author: {
+            "@type": "Organization",
+            name: "Floor'd Flooring + Finishes",
+            url: "https://floordflooringandfinishes.com",
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Floor'd Flooring + Finishes",
+            url: "https://floordflooringandfinishes.com",
+          },
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `https://floordflooringandfinishes.com/blog/${post.slug}`,
+          },
+        }}
+      />
       <Header />
 
       {/* Article Header */}
@@ -66,29 +96,8 @@ export default function BlogPost() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-12 section-cream">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-heading text-2xl md:text-3xl text-foreground mb-3">
-              Ready to Get Started?
-            </h2>
-            <p className="text-muted-foreground mb-6">
-              Visit Floor'd Flooring + Finishes in Little Rock, AR — no
-              appointment needed, no pressure, just good flooring and good
-              people.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button variant="default" size="lg" asChild>
-                <a href="/#contact">Get a Free Estimate</a>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <a href="tel:+15015551234">Call (501) 555-1234</a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Contact Form */}
+      <ContactForm compact heading="Ready to Get Started?" subheading="Visit Floor'd in Little Rock, AR — no appointment needed, no pressure, just honest advice and a free estimate." />
 
       {/* Related Posts */}
       {related.length > 0 && (

@@ -3,16 +3,16 @@ import { Facebook, Instagram, Twitter, Phone, MapPin } from "lucide-react";
 
 const footerLinks = {
   products: [
-    { name: "Hardwood", href: "#flooring" },
-    { name: "Luxury Vinyl", href: "#flooring" },
-    { name: "Tile & Stone", href: "#flooring" },
-    { name: "Laminate", href: "#flooring" },
-    { name: "Carpet", href: "#flooring" },
+    { name: "Hardwood", href: "/flooring/hardwood" },
+    { name: "Luxury Vinyl", href: "/flooring/luxury-vinyl" },
+    { name: "Tile & Stone", href: "/flooring/tile" },
+    { name: "Laminate", href: "/flooring/laminate" },
+    { name: "Carpet", href: "/flooring/carpet" },
   ],
   company: [
-    { name: "About Us", href: "#about" },
-    { name: "Blog", href: "#blog" },
-    { name: "Contact", href: "#contact" },
+    { name: "About Us", href: "/#about" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact", href: "/#contact" },
   ],
   support: [
     { name: "FAQ", href: "#faq" },
@@ -50,7 +50,7 @@ export function Footer() {
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-primary shrink-0" />
                 <span className="text-background/60 text-sm">
-                  11915 I-30 Frontage Rd, Little Rock, AR 72209
+                  11915 I-30 Frontage Rd, Suite D, Little Rock, AR 72209
                 </span>
               </div>
             </div>
@@ -86,9 +86,9 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.products.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-background/50 text-sm hover:text-primary transition-colors">
+                  <Link to={link.href} className="text-background/50 text-sm hover:text-primary transition-colors">
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -100,9 +100,9 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-background/50 text-sm hover:text-primary transition-colors">
+                  <Link to={link.href} className="text-background/50 text-sm hover:text-primary transition-colors">
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
