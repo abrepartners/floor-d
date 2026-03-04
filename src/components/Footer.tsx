@@ -29,17 +29,11 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-heading text-xl font-bold">F</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-heading text-2xl font-semibold tracking-tight text-background">
-                  Floor'd
-                </span>
-                <span className="text-[10px] tracking-[0.2em] uppercase text-primary font-medium -mt-1">
-                  Flooring + Finishes
-                </span>
-              </div>
+              <img
+                src="/logo.svg"
+                alt="Floor'd Flooring + Finishes"
+                className="h-10 w-auto brightness-0 invert"
+              />
             </Link>
             <p className="text-background/50 text-sm max-w-xs mb-6 leading-relaxed">
               Your friendly neighborhood flooring store in Little Rock, AR. Every style, every budget, every customer treated right.
