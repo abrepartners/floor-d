@@ -15,9 +15,9 @@ const footerLinks = {
     { name: "Contact", href: "/#contact" },
   ],
   support: [
-    { name: "FAQ", href: "#faq" },
-    { name: "Warranty", href: "#" },
-    { name: "Care Guide", href: "#" },
+    { name: "FAQ", href: "/#faq" },
+    { name: "Warranty", href: "/#faq" },
+    { name: "Care Guide", href: "/blog" },
   ],
 };
 
@@ -114,9 +114,9 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-background/50 text-sm hover:text-primary transition-colors">
+                  <Link to={link.href} className="text-background/50 text-sm hover:text-primary transition-colors">
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -129,12 +129,12 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Floor'd Flooring + Finishes. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
-            <a href="#" className="text-background/40 hover:text-primary transition-colors">
+            <Link to="/#faq" className="text-background/40 hover:text-primary transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="text-background/40 hover:text-primary transition-colors">
+            </Link>
+            <Link to="/#faq" className="text-background/40 hover:text-primary transition-colors">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

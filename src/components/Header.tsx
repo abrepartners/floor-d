@@ -1,25 +1,31 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { name: "Flooring", href: "#flooring" },
-  { name: "About", href: "#about" },
-  { name: "FAQ", href: "#faq" },
+  { name: "Flooring", href: "/#flooring" },
+  { name: "About", href: "/#about" },
+  { name: "FAQ", href: "/#faq" },
   { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "#contact" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
 
   return (
     <header
@@ -44,29 +50,17 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) =>
-              link.href.startsWith("/") ? (
-                <Link
-                  key={link.name}
-                  to={link.href}
-                  className={`text-sm font-medium transition-colors duration-200 tracking-wide uppercase hover:text-primary ${
-                    scrolled ? "text-muted-foreground" : "text-white/85 hover:text-white"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ) : (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={`text-sm font-medium transition-colors duration-200 tracking-wide uppercase hover:text-primary ${
-                    scrolled ? "text-muted-foreground" : "text-white/85 hover:text-white"
-                  }`}
-                >
-                  {link.name}
-                </a>
-              )
-            )}
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.href}
+                className={`text-sm font-medium transition-colors duration-200 tracking-wide uppercase hover:text-primary ${
+                  scrolled ? "text-muted-foreground" : "text-white/85 hover:text-white"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
           </nav>
 
           {/* CTA area */}
@@ -83,7 +77,7 @@ export function Header() {
               <span>(501) 555-1234</span>
             </a>
             <Button variant="default" size="default" asChild>
-              <a href="#contact">Let's Talk Floors</a>
+              <Link to="/#contact">Let's Talk Floors</Link>
             </Button>
           </div>
 
@@ -101,27 +95,15 @@ export function Header() {
         {isMenuOpen && (
           <div className="lg:hidden py-4 border-t border-border bg-background rounded-b-xl animate-fade-in">
             <nav className="flex flex-col gap-1">
-              {navLinks.map((link) =>
-                link.href.startsWith("/") ? (
-                  <Link
-                    key={link.name}
-                    to={link.href}
-                    className="text-base font-medium text-foreground hover:text-primary hover:bg-secondary/50 transition-colors py-3 px-4 rounded-lg"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                ) : (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="text-base font-medium text-foreground hover:text-primary hover:bg-secondary/50 transition-colors py-3 px-4 rounded-lg"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {link.name}
-                  </a>
-                )
-              )}
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="text-base font-medium text-foreground hover:text-primary hover:bg-secondary/50 transition-colors py-3 px-4 rounded-lg"
+                >
+                  {link.name}
+                </Link>
+              ))}
               <div className="pt-4 mt-2 border-t border-border flex flex-col gap-3 px-4">
                 <a
                   href="tel:+15015551234"
@@ -131,7 +113,7 @@ export function Header() {
                   <span>(501) 555-1234</span>
                 </a>
                 <Button variant="default" size="lg" className="w-full" asChild>
-                  <a href="#contact">Let's Talk Floors</a>
+                  <Link to="/#contact">Let's Talk Floors</Link>
                 </Button>
               </div>
             </nav>
