@@ -106,7 +106,7 @@ export function Header() {
               ))}
               <div className="pt-4 mt-2 border-t border-border flex flex-col gap-3 px-4">
                 <a
-                  href="tel:+15015551234"
+                  href="tel:+15012993871"
                   className="flex items-center gap-2 text-base text-foreground hover:text-primary transition-colors py-2"
                 >
                   <Phone className="w-5 h-5" />
