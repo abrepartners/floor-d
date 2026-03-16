@@ -33,7 +33,7 @@ If we could only recommend one flooring type for families, it'd be LVP. Here's w
 - **Scratch-resistant** — pet nails won't destroy it
 - **Comfortable underfoot** — warmer and softer than tile
 - **Looks like real hardwood** — seriously, your friends won't know the difference
-- **Budget-friendly** — starting around $2-4/sq ft installed
+- **Budget-friendly** — one of the most affordable flooring options
 
 LVP works in every room of your house. Kitchen, bathroom, living room, basement — anywhere life happens.
 
