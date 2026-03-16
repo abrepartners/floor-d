@@ -78,13 +78,15 @@ Deno.serve(async (req) => {
     const supabase = createClient(supabaseUrl, supabaseServiceKey)
 
     const { error: enqueueError } = await supabase.rpc('enqueue_email', {
-      p_queue_name: 'transactional_emails',
-      p_to_email: 'miket@floordarkansas.com',
-      p_subject: subject,
-      p_html: html,
-      p_from_name: "Floor'd Website",
-      p_reply_to: email,
-      p_template_name: 'lead_notification',
+      queue_name: 'transactional_emails',
+      payload: {
+        to: 'miket@floordarkansas.com',
+        subject,
+        html,
+        from_name: "Floor'd Website",
+        reply_to: email,
+        template_name: 'lead_notification',
+      },
     })
 
     if (enqueueError) {
