@@ -2,53 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Clock, ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-
-const FLOORING_LABELS: Record<string, string> = {
-  hardwood: "Hardwood",
-  vinyl: "Luxury Vinyl (LVP)",
-  tile: "Tile & Stone",
-  laminate: "Laminate",
-  carpet: "Carpet",
-  other: "Not Sure / Other",
-};
-
-function buildMailto(data: {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  flooringType: string;
-  message: string;
-}) {
-  const flooringLabel = FLOORING_LABELS[data.flooringType] || data.flooringType || "Not specified";
-  const subject = `New Floor'd Lead: ${flooringLabel} — ${data.firstName} ${data.lastName}`;
-  const timestamp = new Date().toLocaleString("en-US", { dateStyle: "full", timeStyle: "short" });
-  const body = `
-═══════════════════════════════════
-  NEW LEAD FROM FLOOR'D WEBSITE
-═══════════════════════════════════
-
-CONTACT INFORMATION
-───────────────────
-Name:           ${data.firstName} ${data.lastName}
-Email:          ${data.email}
-Phone:          ${data.phone}
-
-PROJECT DETAILS
-───────────────
-Flooring Type:  ${flooringLabel}
-
-Project Description:
-${data.message || "No details provided."}
-
-───────────────
-Submitted:      ${timestamp}
-Source:         floord.lovable.app
-═══════════════════════════════════
-`.trim();
-
-  return `mailto:miket@floordarkansas.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-}
+import { submitLeadForm } from "@/lib/submitLead";
 
 export function CTA() {
   const { toast } = useToast();
@@ -58,16 +12,25 @@ export function CTA() {
   const [phone, setPhone] = useState("");
   const [flooringType, setFlooringType] = useState("");
   const [message, setMessage] = useState("");
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!firstName || !lastName || !email || !phone) {
       toast({ title: "Please fill in all required fields.", variant: "destructive" });
       return;
     }
-    const url = buildMailto({ firstName, lastName, email, phone, flooringType, message });
-    window.location.href = url;
-    toast({ title: "Opening your email client…", description: "Send the pre-filled email to complete your request." });
+    setSending(true);
+    const result = await submitLeadForm({ firstName, lastName, email, phone, flooringType, message });
+    setSending(false);
+
+    if (result.success) {
+      toast({ title: "Request sent!", description: "We'll get back to you soon." });
+      setFirstName(""); setLastName(""); setEmail(""); setPhone("");
+      setFlooringType(""); setMessage("");
+    } else {
+      toast({ title: "Something went wrong", description: result.error, variant: "destructive" });
+    }
   };
 
   return (
@@ -77,7 +40,6 @@ export function CTA() {
 
       <div className="container mx-auto px-4 relative">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left Content */}
           <div>
             <p className="text-primary font-medium text-sm tracking-widest uppercase mb-4">Get Started</p>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl mb-6">let's find your floor</h2>
@@ -134,7 +96,6 @@ export function CTA() {
             </div>
           </div>
 
-          {/* Right Content - Form */}
           <div id="cta-form" className="bg-background/5 backdrop-blur-sm rounded-xl p-8 lg:p-10 border border-background/10">
             <h3 className="font-heading text-2xl mb-2">Get a Free Estimate</h3>
             <p className="text-background/60 text-sm mb-8">Tell us about your project and we'll get back to you quick.</p>
@@ -155,7 +116,9 @@ export function CTA() {
                 <option value="other" className="text-foreground">Not Sure / Other</option>
               </select>
               <textarea placeholder="Tell us about your project..." rows={4} value={message} onChange={(e) => setMessage(e.target.value)} className="w-full px-4 py-3.5 bg-background/10 border border-background/20 rounded-xl text-background placeholder:text-background/40 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all resize-none" />
-              <Button variant="default" size="lg" className="w-full">Send It Over</Button>
+              <Button variant="default" size="lg" className="w-full" disabled={sending}>
+                {sending ? "Sending…" : "Send It Over"}
+              </Button>
             </form>
           </div>
         </div>

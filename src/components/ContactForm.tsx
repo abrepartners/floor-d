@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, MapPin, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { submitLeadForm } from "@/lib/submitLead";
 
 interface ContactFormProps {
   heading?: string;
@@ -9,56 +10,6 @@ interface ContactFormProps {
   compact?: boolean;
   dark?: boolean;
   defaultFlooringType?: string;
-}
-
-const FLOORING_LABELS: Record<string, string> = {
-  hardwood: "Hardwood",
-  vinyl: "Luxury Vinyl (LVP)",
-  tile: "Tile & Stone",
-  laminate: "Laminate",
-  carpet: "Carpet",
-  other: "Not Sure / Other",
-};
-
-function buildMailto(data: {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  flooringType: string;
-  message: string;
-}) {
-  const flooringLabel = FLOORING_LABELS[data.flooringType] || data.flooringType || "Not specified";
-  const subject = `New Floor'd Lead: ${flooringLabel} — ${data.firstName} ${data.lastName}`;
-  const timestamp = new Date().toLocaleString("en-US", {
-    dateStyle: "full",
-    timeStyle: "short",
-  });
-  const body = `
-═══════════════════════════════════
-  NEW LEAD FROM FLOOR'D WEBSITE
-═══════════════════════════════════
-
-CONTACT INFORMATION
-───────────────────
-Name:           ${data.firstName} ${data.lastName}
-Email:          ${data.email}
-Phone:          ${data.phone}
-
-PROJECT DETAILS
-───────────────
-Flooring Type:  ${flooringLabel}
-
-Project Description:
-${data.message || "No details provided."}
-
-───────────────
-Submitted:      ${timestamp}
-Source:         floord.lovable.app
-═══════════════════════════════════
-`.trim();
-
-  return `mailto:miket@floordarkansas.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 export function ContactForm({
@@ -75,16 +26,25 @@ export function ContactForm({
   const [phone, setPhone] = useState("");
   const [flooringType, setFlooringType] = useState(defaultFlooringType);
   const [message, setMessage] = useState("");
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!firstName || !lastName || !email || !phone) {
       toast({ title: "Please fill in all required fields.", variant: "destructive" });
       return;
     }
-    const url = buildMailto({ firstName, lastName, email, phone, flooringType, message });
-    window.location.href = url;
-    toast({ title: "Opening your email client…", description: "Send the pre-filled email to complete your request." });
+    setSending(true);
+    const result = await submitLeadForm({ firstName, lastName, email, phone, flooringType, message });
+    setSending(false);
+
+    if (result.success) {
+      toast({ title: "Request sent!", description: "We'll get back to you soon." });
+      setFirstName(""); setLastName(""); setEmail(""); setPhone("");
+      setFlooringType(defaultFlooringType); setMessage("");
+    } else {
+      toast({ title: "Something went wrong", description: result.error, variant: "destructive" });
+    }
   };
 
   const inputClass = (isDark: boolean) =>
@@ -143,8 +103,8 @@ export function ContactForm({
               : "bg-secondary/30 border border-border text-foreground placeholder:text-muted-foreground/60"
           }`}
         />
-        <Button variant="default" size="lg" className="w-full">
-          Send It Over
+        <Button variant="default" size="lg" className="w-full" disabled={sending}>
+          {sending ? "Sending…" : "Send It Over"}
         </Button>
       </form>
     </div>
