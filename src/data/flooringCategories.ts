@@ -159,7 +159,7 @@ export const flooringCategories: FlooringCategory[] = [
     badge: "Lasts Forever",
     description:
       "When you want flooring that can handle anything and still look stunning decades later, tile and stone are it. From sleek porcelain to natural marble, we've got a selection that'll make your Pinterest board jealous. Plus, tile is perfect for Arkansas's warm, humid summers — it stays cool and handles moisture like nothing else.",
-    priceRange: "$4–$10/sq ft installed",
+    
     image: "tile",
     features: [
       "Porcelain, Ceramic & Natural Stone",
