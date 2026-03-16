@@ -214,7 +214,7 @@ If your existing subfloor is uneven, damaged, or needs moisture barrier work, th
 Larger rooms are more cost-effective per square foot. Small, oddly shaped rooms with lots of cuts and transitions cost more per foot but less overall.
 
 ### 5. Removal of Old Flooring
-If we're pulling up old carpet, tile, or laminate, there's a removal and disposal cost. Budget $1-3/sq ft for removal depending on the material.
+If we're pulling up old carpet, tile, or laminate, there's a removal and disposal cost. Budget for removal depending on the material.
 
 ## Smart Ways to Stretch Your Budget
 
