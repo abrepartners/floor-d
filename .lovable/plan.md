@@ -1,21 +1,27 @@
 
 
-## Fix Blog Spacing and Typography
+## Plan: Server-Side Lead Email via Lovable Cloud
 
-**Root cause**: The `@tailwindcss/typography` plugin is installed as a dependency but is not registered in `tailwind.config.ts` plugins. This means all `prose` classes on the blog post page (headings, paragraphs, lists, tables, spacing) are having no effect.
+Right now the contact forms use `mailto:` links, which only work if the visitor has an email client configured. To ensure every lead reaches the owner reliably, we need server-side email delivery.
 
-### Changes
+### Approach
 
-**1. Register typography plugin in Tailwind config** (`tailwind.config.ts`)
-- Add `require("@tailwindcss/typography")` to the plugins array alongside `tailwindcss-animate`
+1. **Enable Lovable Cloud** — This gives us a Supabase backend with edge functions and the ability to send transactional emails.
 
-**2. Refine blog post prose styling** (`src/pages/BlogPost.tsx`)
-- Update the `prose` class configuration to ensure proper heading sizes, paragraph spacing, and table styling that matches the warm brand aesthetic
-- Add `prose-h2` and `prose-h3` size overrides for better visual hierarchy
-- Ensure FAQ sections and markdown tables render with correct spacing
+2. **Create an edge function `send-lead-email`** — Accepts form data (name, email, phone, flooring type, message), validates it, and sends a richly formatted email to `miket@floordarkansas.com` using the Resend API (available via Lovable Cloud's email infrastructure).
 
-**3. Refine blog listing page spacing** (`src/pages/Blog.tsx`)
-- Minor padding/gap adjustments on the cards grid for better visual rhythm
+3. **Update both forms (`CTA.tsx` and `ContactForm.tsx`)** — Replace the `mailto:` logic with a `fetch()` call to the edge function. Show a success toast on completion or an error toast if something fails. The visitor never needs an email client.
 
-Once the typography plugin is active, the markdown content will automatically get proper heading sizes, paragraph spacing, list styling, table formatting, and blockquote styling -- fixing the core issue.
+4. **Email format** — The owner receives a detailed email with:
+   - Subject: `New Floor'd Lead: [Flooring Type] — [Name]`
+   - Body: Name, email, phone, flooring type, project description, timestamp, source URL — all clearly formatted.
+
+### Files changed
+- `supabase/functions/send-lead-email/index.ts` (new)
+- `supabase/config.toml` (new/updated)
+- `src/components/CTA.tsx` — replace mailto with fetch to edge function
+- `src/components/ContactForm.tsx` — same treatment
+
+### What the owner gets
+Every form submission triggers a real email to `miket@floordarkansas.com` — no visitor action required beyond clicking "Send It Over."
 
