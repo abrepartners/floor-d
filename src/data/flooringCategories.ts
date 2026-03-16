@@ -4,7 +4,6 @@ export interface FlooringCategory {
   tagline: string;
   badge: string;
   description: string;
-  priceRange: string;
   image: string;
   features: string[];
   benefits: {
@@ -28,7 +27,7 @@ export const flooringCategories: FlooringCategory[] = [
     badge: "Timeless",
     description:
       "There's nothing quite like real hardwood. Whether you're drawn to the classic warmth of oak, the rich depth of walnut, or the clean look of maple, hardwood flooring adds beauty and value that lasts generations. At Floor'd, we carry both solid and engineered hardwood options so you can get the look and performance that fits your home — and your budget.",
-    priceRange: "$5–$11/sq ft installed",
+    
     image: "hardwood",
     features: [
       "Solid & Engineered Options",
@@ -93,8 +92,8 @@ export const flooringCategories: FlooringCategory[] = [
     tagline: "Waterproof. Scratch-proof. Life-proof.",
     badge: "Most Popular",
     description:
-      "LVP is the hottest thing in flooring right now — and for good reason. It gives you the gorgeous look of hardwood or stone but handles water, scratches, kids, and pets like a champ. At Floor'd, our LVP collection starts at just $2/sq ft and goes up to premium rigid-core options that'll fool even the flooring snobs.",
-    priceRange: "$2–$7/sq ft installed",
+      "LVP is the hottest thing in flooring right now — and for good reason. It gives you the gorgeous look of hardwood or stone but handles water, scratches, kids, and pets like a champ. At Floor'd, our LVP collection ranges from everyday essentials to premium rigid-core options that'll fool even the flooring snobs.",
+    
     image: "vinyl",
     features: [
       "100% Waterproof",
@@ -117,7 +116,7 @@ export const flooringCategories: FlooringCategory[] = [
       {
         title: "Budget Friendly",
         description:
-          "Get the high-end look of hardwood or stone at a fraction of the price. Our LVP options start at just $2/sq ft.",
+          "Get the high-end look of hardwood or stone at a fraction of the price.",
       },
       {
         title: "Comfortable Underfoot",
@@ -151,7 +150,7 @@ export const flooringCategories: FlooringCategory[] = [
     ],
     seoTitle: "Luxury Vinyl Plank (LVP) Flooring in Little Rock, AR | Floor'd",
     seoDescription:
-      "Waterproof luxury vinyl plank flooring starting at $2/sq ft at Floor'd in Little Rock, AR. Pet-friendly, scratch-resistant, professional installation. Free estimates.",
+      "Waterproof luxury vinyl plank flooring at Floor'd in Little Rock, AR. Pet-friendly, scratch-resistant, professional installation. Free estimates.",
   },
   {
     slug: "tile",
@@ -160,7 +159,7 @@ export const flooringCategories: FlooringCategory[] = [
     badge: "Lasts Forever",
     description:
       "When you want flooring that can handle anything and still look stunning decades later, tile and stone are it. From sleek porcelain to natural marble, we've got a selection that'll make your Pinterest board jealous. Plus, tile is perfect for Arkansas's warm, humid summers — it stays cool and handles moisture like nothing else.",
-    priceRange: "$4–$10/sq ft installed",
+    
     image: "tile",
     features: [
       "Porcelain, Ceramic & Natural Stone",
@@ -226,10 +225,10 @@ export const flooringCategories: FlooringCategory[] = [
     badge: "Best Value",
     description:
       "Today's laminate is not your grandma's laminate. Modern laminate flooring is tough, stylish, and incredibly realistic. It's the smart choice when you want beautiful floors on a budget — and it installs fast, which means less disruption to your life. Floor'd carries top brands with scratch-resistant, water-resistant options that look way more expensive than they are.",
-    priceRange: "$2–$5/sq ft installed",
+    
     image: "laminate",
     features: [
-      "Budget Friendly Starting at $2/sq ft",
+      "Budget Friendly",
       "Scratch & Fade Resistant",
       "Quick Click-Lock Install",
       "Realistic Wood Looks",
@@ -283,7 +282,7 @@ export const flooringCategories: FlooringCategory[] = [
     ],
     seoTitle: "Laminate Flooring in Little Rock, AR | Floor'd Flooring + Finishes",
     seoDescription:
-      "Affordable laminate flooring starting at $2/sq ft at Floor'd in Little Rock, AR. Scratch-resistant, realistic wood looks, fast installation. Free estimates.",
+      "Affordable laminate flooring at Floor'd in Little Rock, AR. Scratch-resistant, realistic wood looks, fast installation. Free estimates.",
   },
   {
     slug: "carpet",
@@ -292,7 +291,7 @@ export const flooringCategories: FlooringCategory[] = [
     badge: "Cozy Pick",
     description:
       "Sometimes you just want to sink your toes into something soft. Carpet brings warmth, comfort, and coziness that hard surfaces can't match. At Floor'd, we carry everything from budget-friendly polyester to premium wool and nylon options — in more colors and textures than you can imagine. Perfect for bedrooms, playrooms, and anywhere comfort matters.",
-    priceRange: "$2–$8/sq ft installed",
+    
     image: "carpet",
     features: [
       "Ultra Soft & Comfortable",
@@ -320,7 +319,7 @@ export const flooringCategories: FlooringCategory[] = [
       {
         title: "Budget Options Available",
         description:
-          "Quality carpet starts at just $2/sq ft installed. It's one of the most affordable ways to refresh a room.",
+          "Quality carpet is one of the most affordable ways to refresh a room.",
       },
     ],
     bestFor: [

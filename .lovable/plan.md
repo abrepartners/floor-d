@@ -1,27 +1,21 @@
 
 
-## Update Site: Remove Price Ranges & Update Blog Table Images
+## Fix Blog Spacing and Typography
 
-### 1. Remove price ranges from flooring category pages
+**Root cause**: The `@tailwindcss/typography` plugin is installed as a dependency but is not registered in `tailwind.config.ts` plugins. This means all `prose` classes on the blog post page (headings, paragraphs, lists, tables, spacing) are having no effect.
 
-**`src/pages/FlooringCategory.tsx`** (line 150-152): Remove the `<p>` element displaying `category.priceRange`.
+### Changes
 
-**`src/data/flooringCategories.ts`**: Remove the `priceRange` property from the interface and all 5 category objects (hardwood, LVP, tile, laminate, carpet).
+**1. Register typography plugin in Tailwind config** (`tailwind.config.ts`)
+- Add `require("@tailwindcss/typography")` to the plugins array alongside `tailwindcss-animate`
 
-### 2. Remove price mentions from blog post content
+**2. Refine blog post prose styling** (`src/pages/BlogPost.tsx`)
+- Update the `prose` class configuration to ensure proper heading sizes, paragraph spacing, and table styling that matches the warm brand aesthetic
+- Add `prose-h2` and `prose-h3` size overrides for better visual hierarchy
+- Ensure FAQ sections and markdown tables render with correct spacing
 
-The following blog posts contain price-per-sqft figures in their markdown tables and text:
+**3. Refine blog listing page spacing** (`src/pages/Blog.tsx`)
+- Minor padding/gap adjustments on the cards grid for better visual rhythm
 
-- **"hardwood-vs-lvp"** — Table on lines 147-158 has cost columns (`$6-11/sq ft`, `$3-6/sq ft`). Also inline price mentions throughout.
-- **"flooring-cost-guide"** — Entire table on lines 204-211 is a pricing table. Also numerous inline price references.
-- **"best-flooring-kids-pets"** — Inline price mentions (e.g. "$2-4/sq ft", "$2/sq ft").
-- **"kitchen-bathroom-flooring-guide"** — Inline prices like "$3-6/sq ft", "$5-10/sq ft".
-- **"why-shop-local-central-arkansas"** — Price mention "$2/sq ft" in FAQ.
-
-**Approach**: Remove price columns from markdown tables and strip inline price-per-sqft references from all blog content, keeping the prose natural.
-
-### 3. Technical detail
-
-- The `FlooringCategory` TypeScript interface will have `priceRange` removed — this is a breaking change that will surface any other usages at compile time.
-- Blog content is plain markdown strings; tables will be edited to remove cost rows/columns while keeping the comparison structure intact.
+Once the typography plugin is active, the markdown content will automatically get proper heading sizes, paragraph spacing, list styling, table formatting, and blockquote styling -- fixing the core issue.
 

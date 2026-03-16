@@ -147,9 +147,6 @@ export default function FlooringCategory() {
               <p className="text-white/80 text-lg md:text-xl max-w-2xl">
                 {category.tagline}
               </p>
-              <p className="text-primary font-semibold text-lg mt-4">
-                {category.priceRange}
-              </p>
             </div>
           </div>
         </div>

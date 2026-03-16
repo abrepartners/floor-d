@@ -33,7 +33,7 @@ If we could only recommend one flooring type for families, it'd be LVP. Here's w
 - **Scratch-resistant** — pet nails won't destroy it
 - **Comfortable underfoot** — warmer and softer than tile
 - **Looks like real hardwood** — seriously, your friends won't know the difference
-- **Budget-friendly** — starting around $2-4/sq ft installed
+- **Budget-friendly** — one of the most affordable flooring options
 
 LVP works in every room of your house. Kitchen, bathroom, living room, basement — anywhere life happens.
 
@@ -41,7 +41,7 @@ LVP works in every room of your house. Kitchen, bathroom, living room, basement 
 
 If you love the look of hardwood but want to keep costs down, laminate is your friend:
 
-- **Great looks for less** — starting around $2/sq ft
+- **Great looks for less** — one of the most budget-friendly options
 - **Durable top layer** resists scratches and dents
 - **Easy to clean** — just sweep and damp mop
 - **Quick installation** — most rooms done in a day
@@ -66,7 +66,7 @@ We love hardwood — it's beautiful and adds real value to your home. But for fa
 ## How to Choose: Ask Yourself These Questions
 
 1. **Where is this going?** Bathroom = waterproof required. Living room = more flexibility.
-2. **What's your budget?** We work with everything from $2/sq ft to $11/sq ft — no judgment, ever.
+2. **What's your budget?** We work with every budget — no judgment, ever.
 3. **Do you have big dogs?** Large breed nails are tougher on floors. LVP or tile handles them best.
 4. **How long are you staying?** If you're in your forever home, investing more makes sense.
 
@@ -79,7 +79,7 @@ Photos and specs only tell part of the story. Stop by our showroom in Little Roc
 ## Frequently Asked Questions
 
 **What is the most durable flooring for pets?**
-Luxury vinyl plank and porcelain tile are the most durable options for homes with pets. Both resist scratches from pet nails and are easy to clean. At Floor'd in Little Rock, AR, we carry pet-friendly options starting at $2/sq ft.
+Luxury vinyl plank and porcelain tile are the most durable options for homes with pets. Both resist scratches from pet nails and are easy to clean. At Floor'd in Little Rock, AR, we carry pet-friendly options for every budget.
 
 **Can luxury vinyl plank handle dog scratches?**
 Yes. Quality LVP has a wear layer that resists scratches from pet nails. It's one of the top reasons families in Central Arkansas choose LVP for their homes.
@@ -88,7 +88,7 @@ Yes. Quality LVP has a wear layer that resists scratches from pet nails. It's on
 For high-traffic family homes, we recommend luxury vinyl plank for most rooms and porcelain tile for bathrooms and kitchens. Both are easy to maintain and hold up to the daily wear of family life.
 
 **How much does family-friendly flooring cost in Arkansas?**
-Family-friendly flooring in Central Arkansas typically ranges from $2/sq ft for laminate to $6-8/sq ft for premium LVP or tile, including installation. At Floor'd, we help you find the best option for your budget.`,
+Family-friendly flooring in Central Arkansas comes in a wide range of options to fit any budget. At Floor'd, we help you find the best option for your needs.`,
   },
   {
     slug: "hardwood-vs-lvp",
@@ -116,7 +116,7 @@ There's nothing quite like real wood underfoot. It has a warmth and character th
 **The honest downsides:**
 - Not waterproof — water damage is a real concern
 - Scratches from pets, furniture, and kids
-- Higher cost: typically $6-11/sq ft installed
+- Higher cost than LVP or laminate
 - Requires more maintenance (periodic refinishing)
 - Sensitive to humidity changes (especially in Arkansas summers)
 
@@ -130,7 +130,7 @@ LVP has come a long way. Today's options look so realistic that most people genu
 - 100% waterproof — install it anywhere, even bathrooms
 - Scratch and dent resistant
 - Looks remarkably like real wood
-- More affordable: typically $3-6/sq ft installed
+- More affordable than hardwood
 - Comfortable and warm underfoot
 - Lower maintenance — just sweep and mop
 
@@ -149,7 +149,7 @@ LVP has come a long way. Today's options look so realistic that most people genu
 | **Look & Feel** | Natural, warm, unique grain | Very realistic wood-look |
 | **Waterproof** | No | Yes |
 | **Scratch Resistance** | Moderate | High |
-| **Cost (installed)** | $6-11/sq ft | $3-6/sq ft |
+| **Cost** | Higher | Lower |
 | **Lifespan** | 50+ years | 15-25 years |
 | **Maintenance** | Periodic refinishing | Sweep and mop |
 | **Resale Value** | Higher | Moderate |
@@ -191,31 +191,18 @@ Hardwood can last 50+ years with periodic refinishing. LVP typically lasts 15-25
     title:
       "How Much Does New Flooring Cost? A Real Talk Guide for Arkansas Homeowners",
     excerpt:
-      "New flooring in Central Arkansas typically costs between $2 and $11 per square foot installed. A typical 1,000 sq ft project ranges from $2,000 for laminate to $11,000 for premium hardwood. Here's what actually drives the price.",
+      "New flooring in Central Arkansas varies based on material, room complexity, and prep work. Here's what actually drives the price.",
     date: "2026-03-01",
     readTime: "5 min read",
     category: "Cost Guide",
     content: `## Let's Talk Numbers (Without the Sticker Shock)
 
-We know cost is usually the first thing on your mind. And that's totally fine — we're not going to pretend budget doesn't matter. At Floor'd in Little Rock, we work with every budget, from starter homes to dream builds. Here's what things actually cost.
-
-## Flooring Costs at a Glance
-
-| Flooring Type | Material Cost/sq ft | Installed Cost/sq ft | 1,000 sq ft Total |
-|--------------|--------------------|-----------------------|-------------------|
-| **Laminate** | $1-3 | $2-5 | $2,000-5,000 |
-| **Luxury Vinyl Plank** | $2-5 | $3-7 | $3,000-7,000 |
-| **Porcelain Tile** | $2-8 | $5-10 | $5,000-10,000 |
-| **Engineered Hardwood** | $3-8 | $5-10 | $5,000-10,000 |
-| **Solid Hardwood** | $4-11 | $6-14 | $6,000-14,000 |
-| **Carpet** | $1-4 | $2-6 | $2,000-6,000 |
-
-*Prices reflect Central Arkansas market rates as of 2026. Your actual cost depends on the specific product, room complexity, and prep work needed.*
+We know cost is usually the first thing on your mind. And that's totally fine — we're not going to pretend budget doesn't matter. At Floor'd in Little Rock, we work with every budget, from starter homes to dream builds.
 
 ## What Actually Affects Your Price
 
 ### 1. The Material Itself
-This is the obvious one. Laminate and basic LVP are the most affordable. Premium hardwood and designer tile cost more. But here's the thing — the cheapest option isn't always the best value. A $3/sq ft LVP that lasts 20 years is a better deal than a $1.50/sq ft product that needs replacing in 5.
+This is the obvious one. Laminate and basic LVP are the most affordable. Premium hardwood and designer tile cost more. But here's the thing — the cheapest option isn't always the best value. A quality LVP that lasts 20 years is a better deal than a bargain product that needs replacing in 5.
 
 ### 2. Installation Complexity
 A simple rectangular room with flat subfloor? Straightforward. A kitchen with an island, angled walls, and old tile that needs removal? That takes more time and skill. We always do a free estimate so there are no surprises.
@@ -227,7 +214,7 @@ If your existing subfloor is uneven, damaged, or needs moisture barrier work, th
 Larger rooms are more cost-effective per square foot. Small, oddly shaped rooms with lots of cuts and transitions cost more per foot but less overall.
 
 ### 5. Removal of Old Flooring
-If we're pulling up old carpet, tile, or laminate, there's a removal and disposal cost. Budget $1-3/sq ft for removal depending on the material.
+If we're pulling up old carpet, tile, or laminate, there's a removal and disposal cost. Budget for removal depending on the material.
 
 ## Smart Ways to Stretch Your Budget
 
@@ -239,7 +226,7 @@ If we're pulling up old carpet, tile, or laminate, there's a removal and disposa
 
 ## The Floor'd Promise: No Judgment on Budget
 
-Here's something we take seriously: every customer gets the same respect and attention, whether you're spending $2,000 or $20,000. We've helped homeowners find gorgeous laminate on a tight budget, and we've done full custom builds. The size of your project doesn't change the size of our commitment.
+Here's something we take seriously: every customer gets the same respect and attention, no matter the size of the project. We've helped homeowners find gorgeous laminate on a tight budget, and we've done full custom builds. The size of your project doesn't change the size of our commitment.
 
 ## Get a Free Estimate — No Strings Attached
 
@@ -250,13 +237,13 @@ The best way to know your actual cost is to get a personalized estimate. We'll c
 ## Frequently Asked Questions
 
 **How much does it cost to install flooring in a 1,500 sq ft house in Arkansas?**
-For a 1,500 sq ft home in Central Arkansas, flooring installation typically ranges from $3,000 for laminate to $15,000+ for premium hardwood. At Floor'd in Little Rock, we provide free estimates and work with every budget.
+Flooring costs for a 1,500 sq ft home in Central Arkansas vary based on material and project complexity. At Floor'd in Little Rock, we provide free estimates and work with every budget.
 
 **What is the cheapest flooring option that still looks good?**
-Laminate flooring starting around $2/sq ft installed offers great looks for the lowest cost. Quality luxury vinyl plank at $3-4/sq ft is also an excellent value with better durability and waterproofing.
+Laminate flooring offers great looks for the lowest cost. Quality luxury vinyl plank is also an excellent value with better durability and waterproofing.
 
 **Is it cheaper to install flooring yourself?**
-DIY can save on labor (roughly $1-3/sq ft), but mistakes can be costly to fix. Professional installation also typically comes with a workmanship warranty. We recommend DIY only for experienced homeowners working with click-lock LVP or laminate.
+DIY can save on labor costs, but mistakes can be costly to fix. Professional installation also typically comes with a workmanship warranty. We recommend DIY only for experienced homeowners working with click-lock LVP or laminate.
 
 **Does new flooring increase home value?**
 Yes. New flooring is one of the highest-ROI home improvements. Hardwood floors can return 70-80% of their cost at resale. Even LVP and quality laminate make homes more attractive to buyers.`,
@@ -286,7 +273,6 @@ LVP has become the go-to kitchen floor across Central Arkansas, and for good rea
 - Looks like real hardwood or stone
 - Easy to clean — spills wipe right up
 - Cushioned underfoot reduces fatigue
-- $3-6/sq ft installed
 
 ### Porcelain Tile — The Timeless Choice
 
@@ -296,7 +282,6 @@ If you want a floor that'll outlast the kitchen itself:
 - Handles heavy foot traffic and dropped cookware
 - Huge variety of looks: wood-grain, marble, concrete, geometric
 - Compatible with radiant floor heating
-- $5-10/sq ft installed
 
 ### What About Hardwood in the Kitchen?
 
@@ -322,7 +307,6 @@ LVP is gaining ground in bathrooms, especially in Central Arkansas homes:
 - Warmer and softer than tile (no cold shock in the morning)
 - Faster and less expensive to install
 - Great for half baths, powder rooms, and secondary bathrooms
-- $3-6/sq ft installed
 
 ### A Word on Bathroom Carpet and Laminate
 
@@ -443,7 +427,7 @@ That's who we are. And we think once you visit, you'll feel the difference.
 ## Frequently Asked Questions
 
 **Where is the best place to buy flooring in Little Rock, AR?**
-Floor'd Flooring + Finishes in Little Rock, AR offers a full showroom with flooring options at every price point, from $2/sq ft laminate to premium hardwood. We provide free consultations, professional installation, and honest advice.
+Floor'd Flooring + Finishes in Little Rock, AR offers a full showroom with flooring options at every price point. We provide free consultations, professional installation, and honest advice.
 
 **Is local flooring more expensive than Home Depot or Lowe's?**
 Not necessarily. Local flooring stores like Floor'd often match or beat big box prices because they buy direct from manufacturers and have lower overhead. Plus, you get personalized service and professional installation included.
