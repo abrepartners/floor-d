@@ -226,7 +226,7 @@ If we're pulling up old carpet, tile, or laminate, there's a removal and disposa
 
 ## The Floor'd Promise: No Judgment on Budget
 
-Here's something we take seriously: every customer gets the same respect and attention, whether you're spending $2,000 or $20,000. We've helped homeowners find gorgeous laminate on a tight budget, and we've done full custom builds. The size of your project doesn't change the size of our commitment.
+Here's something we take seriously: every customer gets the same respect and attention, no matter the size of the project. We've helped homeowners find gorgeous laminate on a tight budget, and we've done full custom builds. The size of your project doesn't change the size of our commitment.
 
 ## Get a Free Estimate — No Strings Attached
 
