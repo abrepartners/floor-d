@@ -32,7 +32,6 @@ export const flooringCategories: FlooringCategory[] = [
     features: [
       "Solid & Engineered Options",
       "Custom Staining Available",
-      "25+ Year Warranty",
       "Professional Installation",
       "Sanding & Refinishing Services",
     ],
