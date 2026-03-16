@@ -92,7 +92,7 @@ export const flooringCategories: FlooringCategory[] = [
     tagline: "Waterproof. Scratch-proof. Life-proof.",
     badge: "Most Popular",
     description:
-      "LVP is the hottest thing in flooring right now — and for good reason. It gives you the gorgeous look of hardwood or stone but handles water, scratches, kids, and pets like a champ. At Floor'd, our LVP collection starts at just $2/sq ft and goes up to premium rigid-core options that'll fool even the flooring snobs.",
+      "LVP is the hottest thing in flooring right now — and for good reason. It gives you the gorgeous look of hardwood or stone but handles water, scratches, kids, and pets like a champ. At Floor'd, our LVP collection ranges from everyday essentials to premium rigid-core options that'll fool even the flooring snobs.",
     
     image: "vinyl",
     features: [
