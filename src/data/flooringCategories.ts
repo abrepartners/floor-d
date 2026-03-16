@@ -116,7 +116,7 @@ export const flooringCategories: FlooringCategory[] = [
       {
         title: "Budget Friendly",
         description:
-          "Get the high-end look of hardwood or stone at a fraction of the price. Our LVP options start at just $2/sq ft.",
+          "Get the high-end look of hardwood or stone at a fraction of the price.",
       },
       {
         title: "Comfortable Underfoot",
