@@ -150,7 +150,7 @@ export const flooringCategories: FlooringCategory[] = [
     ],
     seoTitle: "Luxury Vinyl Plank (LVP) Flooring in Little Rock, AR | Floor'd",
     seoDescription:
-      "Waterproof luxury vinyl plank flooring starting at $2/sq ft at Floor'd in Little Rock, AR. Pet-friendly, scratch-resistant, professional installation. Free estimates.",
+      "Waterproof luxury vinyl plank flooring at Floor'd in Little Rock, AR. Pet-friendly, scratch-resistant, professional installation. Free estimates.",
   },
   {
     slug: "tile",
