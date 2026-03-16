@@ -20,7 +20,7 @@ const faqs = [
   {
     question: "Does Floor'd install the flooring too?",
     answer:
-      "Yes. Floor'd provides professional installation with every purchase. Our installers are vetted local professionals who specialize in Arkansas homes — no subcontractors.",
+      "Yes. Professional installation is available with any purchase. Whether you need full-service installation or just a helping hand on part of the project, we can do as much or as little as you need. Our installers are vetted local pros who specialize in Arkansas homes.",
   },
   {
     question: "How long does flooring installation take?",
