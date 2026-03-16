@@ -149,7 +149,7 @@ LVP has come a long way. Today's options look so realistic that most people genu
 | **Look & Feel** | Natural, warm, unique grain | Very realistic wood-look |
 | **Waterproof** | No | Yes |
 | **Scratch Resistance** | Moderate | High |
-| **Cost (installed)** | $6-11/sq ft | $3-6/sq ft |
+| **Cost** | Higher | Lower |
 | **Lifespan** | 50+ years | 15-25 years |
 | **Maintenance** | Periodic refinishing | Sweep and mop |
 | **Resale Value** | Higher | Moderate |
