@@ -1,27 +1,21 @@
 
 
-## Update Site Content
+## Fix Blog Spacing and Typography
 
-### 1. Phone number — update everywhere
-Replace `(501) 555-1234` / `tel:+15015551234` with `(501) 299-3871` / `tel:+15012993871` in:
-- `src/components/Header.tsx` (2 occurrences)
-- `src/components/CTA.tsx` (2 occurrences — display + href)
-- `src/components/Footer.tsx` (2 occurrences)
-- `src/components/ContactForm.tsx` (2 occurrences)
+**Root cause**: The `@tailwindcss/typography` plugin is installed as a dependency but is not registered in `tailwind.config.ts` plugins. This means all `prose` classes on the blog post page (headings, paragraphs, lists, tables, spacing) are having no effect.
 
-### 2. Services section (`src/components/Services.tsx`)
-Update three of the four service cards:
+### Changes
 
-- **"Every Budget Welcome"** — new description: *"Your budget is your business—not ours to judge. It's your home, and that's what matters. We treat every project the same, whether it's a whole house or a single room."*
-- **"Real Local Pros"** — new description: *"Our installers are your neighbors. They just happen to be skilled professionals who take pride in their craft."*
-- **"We Stand Behind It"** → rename to **"Right-Sized Solution"**, change icon from `ShieldCheck` to something like `Layers` or `Settings`, new description: *"Whether you just need materials, also need installation, or you'd even like a design consultant—we've got you covered."*
+**1. Register typography plugin in Tailwind config** (`tailwind.config.ts`)
+- Add `require("@tailwindcss/typography")` to the plugins array alongside `tailwindcss-animate`
 
-### 3. Products section (`src/components/Products.tsx`)
-- **Hardwood** features: replace `"25+ Year Warranty"` with `"Unique patterns for inlays or custom layouts"` (keep Solid & Engineered and Custom Staining)
-- **Reorder**: move Laminate to position 3 (after LVP, before Tile)
-- **Carpet**: add `"From wool to plant-based available"` to the features list
+**2. Refine blog post prose styling** (`src/pages/BlogPost.tsx`)
+- Update the `prose` class configuration to ensure proper heading sizes, paragraph spacing, and table styling that matches the warm brand aesthetic
+- Add `prose-h2` and `prose-h3` size overrides for better visual hierarchy
+- Ensure FAQ sections and markdown tables render with correct spacing
 
-### 4. About section (`src/components/About.tsx`)
-- Change the line `"whether you're spending $2,000 or $20,000"` to `"From $1,000 to $100,000"`
-- Ensure the "That's the Floor'd way." line follows directly after
+**3. Refine blog listing page spacing** (`src/pages/Blog.tsx`)
+- Minor padding/gap adjustments on the cards grid for better visual rhythm
+
+Once the typography plugin is active, the markdown content will automatically get proper heading sizes, paragraph spacing, list styling, table formatting, and blockquote styling -- fixing the core issue.
 

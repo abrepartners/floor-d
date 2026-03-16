@@ -37,8 +37,8 @@ export function CTA() {
                 </div>
                 <div>
                   <p className="font-heading text-lg">Give Us a Call</p>
-                  <a href="tel:+15015551234" className="text-background/60 text-sm hover:text-primary transition-colors">
-                    (501) 555-1234
+                  <a href="tel:+15012993871" className="text-background/60 text-sm hover:text-primary transition-colors">
+                    (501) 299-3871
                   </a>
                 </div>
               </div>

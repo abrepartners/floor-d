@@ -66,7 +66,7 @@ export function Header() {
           {/* CTA area */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="tel:+15015551234"
+              href="tel:+15012993871"
               className={`flex items-center gap-2 text-sm transition-colors ${
                 scrolled
                   ? "text-muted-foreground hover:text-primary"
@@ -74,7 +74,7 @@ export function Header() {
               }`}
             >
               <Phone className="w-4 h-4" />
-              <span>(501) 555-1234</span>
+              <span>(501) 299-3871</span>
             </a>
             <Button variant="default" size="default" asChild>
               <Link to="/#contact">Let's Talk Floors</Link>
@@ -106,11 +106,11 @@ export function Header() {
               ))}
               <div className="pt-4 mt-2 border-t border-border flex flex-col gap-3 px-4">
                 <a
-                  href="tel:+15015551234"
+                  href="tel:+15012993871"
                   className="flex items-center gap-2 text-base text-foreground hover:text-primary transition-colors py-2"
                 >
                   <Phone className="w-5 h-5" />
-                  <span>(501) 555-1234</span>
+                  <span>(501) 299-3871</span>
                 </a>
                 <Button variant="default" size="lg" className="w-full" asChild>
                   <Link to="/#contact">Let's Talk Floors</Link>

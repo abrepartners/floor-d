@@ -14,7 +14,7 @@ const products = [
     description:
       "There's nothing like real wood. Timeless warmth with character you can feel. Oak, maple, walnut — classic beauty that adds value to your home.",
     image: hardwoodImg,
-    features: ["Solid & Engineered", "Custom Staining", "25+ Year Warranty"],
+    features: ["Solid & Engineered", "Custom Staining", "Unique patterns for inlays or custom layouts"],
     badge: "Timeless",
   },
   {
@@ -27,15 +27,6 @@ const products = [
     badge: "Most Popular",
   },
   {
-    slug: "tile",
-    title: "Tile & Stone",
-    description:
-      "Beautiful and basically indestructible. Porcelain, ceramic, natural stone — perfect for kitchens, bathrooms, and anywhere you want flooring that lasts forever.",
-    image: tileImg,
-    features: ["Heated Floor Ready", "Indoor & Outdoor", "Endless Styles"],
-    badge: "Lasts Forever",
-  },
-  {
     slug: "laminate",
     title: "Laminate",
     description:
@@ -45,12 +36,21 @@ const products = [
     badge: "Best Value",
   },
   {
+    slug: "tile",
+    title: "Tile & Stone",
+    description:
+      "Beautiful and basically indestructible. Porcelain, ceramic, natural stone — perfect for kitchens, bathrooms, and anywhere you want flooring that lasts forever.",
+    image: tileImg,
+    features: ["Heated Floor Ready", "Indoor & Outdoor", "Endless Styles"],
+    badge: "Lasts Forever",
+  },
+  {
     slug: "carpet",
     title: "Carpet",
     description:
       "Soft, warm, and cozy. Perfect for bedrooms, playrooms, and anywhere you want to sink your toes in. More colors and textures than you can imagine.",
     image: carpetImg,
-    features: ["Ultra Comfortable", "Sound Absorbing", "Stain Resistant Options"],
+    features: ["Ultra Comfortable", "Sound Absorbing", "Stain Resistant Options", "From wool to plant-based available"],
     badge: "Cozy Pick",
   },
 ];

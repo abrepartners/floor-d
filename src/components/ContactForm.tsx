@@ -184,10 +184,10 @@ export function ContactForm({
                     Give Us a Call
                   </p>
                   <a
-                    href="tel:+15015551234"
+                    href="tel:+15012993871"
                     className="text-muted-foreground text-sm hover:text-primary transition-colors"
                   >
-                    (501) 555-1234
+                    (501) 299-3871
                   </a>
                 </div>
               </div>
