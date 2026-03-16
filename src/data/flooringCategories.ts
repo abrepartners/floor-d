@@ -225,7 +225,7 @@ export const flooringCategories: FlooringCategory[] = [
     badge: "Best Value",
     description:
       "Today's laminate is not your grandma's laminate. Modern laminate flooring is tough, stylish, and incredibly realistic. It's the smart choice when you want beautiful floors on a budget — and it installs fast, which means less disruption to your life. Floor'd carries top brands with scratch-resistant, water-resistant options that look way more expensive than they are.",
-    priceRange: "$2–$5/sq ft installed",
+    
     image: "laminate",
     features: [
       "Budget Friendly Starting at $2/sq ft",
