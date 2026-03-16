@@ -202,7 +202,7 @@ We know cost is usually the first thing on your mind. And that's totally fine �
 ## What Actually Affects Your Price
 
 ### 1. The Material Itself
-This is the obvious one. Laminate and basic LVP are the most affordable. Premium hardwood and designer tile cost more. But here's the thing — the cheapest option isn't always the best value. A $3/sq ft LVP that lasts 20 years is a better deal than a $1.50/sq ft product that needs replacing in 5.
+This is the obvious one. Laminate and basic LVP are the most affordable. Premium hardwood and designer tile cost more. But here's the thing — the cheapest option isn't always the best value. A quality LVP that lasts 20 years is a better deal than a bargain product that needs replacing in 5.
 
 ### 2. Installation Complexity
 A simple rectangular room with flat subfloor? Straightforward. A kitchen with an island, angled walls, and old tile that needs removal? That takes more time and skill. We always do a free estimate so there are no surprises.
