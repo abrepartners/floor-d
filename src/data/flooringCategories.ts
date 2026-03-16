@@ -27,7 +27,7 @@ export const flooringCategories: FlooringCategory[] = [
     badge: "Timeless",
     description:
       "There's nothing quite like real hardwood. Whether you're drawn to the classic warmth of oak, the rich depth of walnut, or the clean look of maple, hardwood flooring adds beauty and value that lasts generations. At Floor'd, we carry both solid and engineered hardwood options so you can get the look and performance that fits your home — and your budget.",
-    priceRange: "$5–$11/sq ft installed",
+    
     image: "hardwood",
     features: [
       "Solid & Engineered Options",
