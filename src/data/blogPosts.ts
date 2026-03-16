@@ -66,7 +66,7 @@ We love hardwood — it's beautiful and adds real value to your home. But for fa
 ## How to Choose: Ask Yourself These Questions
 
 1. **Where is this going?** Bathroom = waterproof required. Living room = more flexibility.
-2. **What's your budget?** We work with everything from $2/sq ft to $11/sq ft — no judgment, ever.
+2. **What's your budget?** We work with every budget — no judgment, ever.
 3. **Do you have big dogs?** Large breed nails are tougher on floors. LVP or tile handles them best.
 4. **How long are you staying?** If you're in your forever home, investing more makes sense.
 
