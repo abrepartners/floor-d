@@ -130,7 +130,7 @@ LVP has come a long way. Today's options look so realistic that most people genu
 - 100% waterproof — install it anywhere, even bathrooms
 - Scratch and dent resistant
 - Looks remarkably like real wood
-- More affordable: typically $3-6/sq ft installed
+- More affordable than hardwood
 - Comfortable and warm underfoot
 - Lower maintenance — just sweep and mop
 
