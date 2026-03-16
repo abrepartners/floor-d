@@ -66,7 +66,7 @@ export function Header() {
           {/* CTA area */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="tel:+15015551234"
+              href="tel:+15012993871"
               className={`flex items-center gap-2 text-sm transition-colors ${
                 scrolled
                   ? "text-muted-foreground hover:text-primary"
