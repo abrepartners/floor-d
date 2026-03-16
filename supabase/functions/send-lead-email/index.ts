@@ -149,17 +149,28 @@ Deno.serve(async (req) => {
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
     const supabase = createClient(supabaseUrl, supabaseServiceKey)
 
+    const SENDER_DOMAIN = 'notify.floordarkansas.com'
+    const FROM_DOMAIN = 'floordarkansas.com'
+    const runId = Deno.env.get('LOVABLE_RUN_ID') || 'wpczgwxsriezaubncuom'
+
+    const leadMessageId = crypto.randomUUID()
+    const confirmMessageId = crypto.randomUUID()
+
     // 1. Lead notification to Mike
     const { error: leadError } = await supabase.rpc('enqueue_email', {
       queue_name: 'transactional_emails',
       payload: {
+        run_id: runId,
+        message_id: leadMessageId,
         to: 'miket@floordarkansas.com',
+        from: `Floor'd Website <noreply@${FROM_DOMAIN}>`,
+        sender_domain: SENDER_DOMAIN,
         subject: leadSubject,
         html: leadHtml,
-        from_name: "Floor'd Website",
-        reply_to: email,
         purpose: 'transactional',
-        template_name: 'lead_notification',
+        label: 'lead_notification',
+        reply_to: email,
+        queued_at: new Date().toISOString(),
       },
     })
 
@@ -175,13 +186,17 @@ Deno.serve(async (req) => {
     const { error: confirmError } = await supabase.rpc('enqueue_email', {
       queue_name: 'transactional_emails',
       payload: {
+        run_id: runId,
+        message_id: confirmMessageId,
         to: email,
+        from: `Floor'd <noreply@${FROM_DOMAIN}>`,
+        sender_domain: SENDER_DOMAIN,
         subject: confirmSubject,
         html: confirmHtml,
-        from_name: "Floor'd",
-        reply_to: 'miket@floordarkansas.com',
         purpose: 'transactional',
-        template_name: 'lead_confirmation',
+        label: 'lead_confirmation',
+        reply_to: 'miket@floordarkansas.com',
+        queued_at: new Date().toISOString(),
       },
     })
 
