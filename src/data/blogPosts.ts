@@ -307,7 +307,6 @@ LVP is gaining ground in bathrooms, especially in Central Arkansas homes:
 - Warmer and softer than tile (no cold shock in the morning)
 - Faster and less expensive to install
 - Great for half baths, powder rooms, and secondary bathrooms
-- $3-6/sq ft installed
 
 ### A Word on Bathroom Carpet and Laminate
 
