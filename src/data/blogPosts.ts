@@ -116,7 +116,7 @@ There's nothing quite like real wood underfoot. It has a warmth and character th
 **The honest downsides:**
 - Not waterproof — water damage is a real concern
 - Scratches from pets, furniture, and kids
-- Higher cost: typically $6-11/sq ft installed
+- Higher cost than LVP or laminate
 - Requires more maintenance (periodic refinishing)
 - Sensitive to humidity changes (especially in Arkansas summers)
 
