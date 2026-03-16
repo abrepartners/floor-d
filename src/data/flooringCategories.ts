@@ -282,7 +282,7 @@ export const flooringCategories: FlooringCategory[] = [
     ],
     seoTitle: "Laminate Flooring in Little Rock, AR | Floor'd Flooring + Finishes",
     seoDescription:
-      "Affordable laminate flooring starting at $2/sq ft at Floor'd in Little Rock, AR. Scratch-resistant, realistic wood looks, fast installation. Free estimates.",
+      "Affordable laminate flooring at Floor'd in Little Rock, AR. Scratch-resistant, realistic wood looks, fast installation. Free estimates.",
   },
   {
     slug: "carpet",
