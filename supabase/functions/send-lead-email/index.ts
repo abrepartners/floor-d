@@ -158,6 +158,7 @@ Deno.serve(async (req) => {
         html: leadHtml,
         from_name: "Floor'd Website",
         reply_to: email,
+        purpose: 'transactional',
         template_name: 'lead_notification',
       },
     })
@@ -179,6 +180,7 @@ Deno.serve(async (req) => {
         html: confirmHtml,
         from_name: "Floor'd",
         reply_to: 'miket@floordarkansas.com',
+        purpose: 'transactional',
         template_name: 'lead_confirmation',
       },
     })
