@@ -4,7 +4,6 @@ export interface FlooringCategory {
   tagline: string;
   badge: string;
   description: string;
-  priceRange: string;
   image: string;
   features: string[];
   benefits: {
