@@ -228,7 +228,7 @@ export const flooringCategories: FlooringCategory[] = [
     
     image: "laminate",
     features: [
-      "Budget Friendly Starting at $2/sq ft",
+      "Budget Friendly",
       "Scratch & Fade Resistant",
       "Quick Click-Lock Install",
       "Realistic Wood Looks",
