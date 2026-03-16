@@ -427,7 +427,7 @@ That's who we are. And we think once you visit, you'll feel the difference.
 ## Frequently Asked Questions
 
 **Where is the best place to buy flooring in Little Rock, AR?**
-Floor'd Flooring + Finishes in Little Rock, AR offers a full showroom with flooring options at every price point, from $2/sq ft laminate to premium hardwood. We provide free consultations, professional installation, and honest advice.
+Floor'd Flooring + Finishes in Little Rock, AR offers a full showroom with flooring options at every price point. We provide free consultations, professional installation, and honest advice.
 
 **Is local flooring more expensive than Home Depot or Lowe's?**
 Not necessarily. Local flooring stores like Floor'd often match or beat big box prices because they buy direct from manufacturers and have lower overhead. Plus, you get personalized service and professional installation included.
