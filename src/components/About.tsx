@@ -33,7 +33,7 @@ export function About() {
               </p>
 
               <p>
-                We believe great flooring shouldn't just look good &mdash; it should fit your life. And we believe every customer deserves the same respect, whether you're spending $2,000 or $20,000.
+                We believe great flooring shouldn't just look good &mdash; it should fit your life. And we believe every customer deserves the same respect. From $1,000 to $100,000.
               </p>
 
               <p className="font-heading text-foreground text-xl">

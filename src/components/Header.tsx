@@ -110,7 +110,7 @@ export function Header() {
                   className="flex items-center gap-2 text-base text-foreground hover:text-primary transition-colors py-2"
                 >
                   <Phone className="w-5 h-5" />
-                  <span>(501) 555-1234</span>
+                  <span>(501) 299-3871</span>
                 </a>
                 <Button variant="default" size="lg" className="w-full" asChild>
                   <Link to="/#contact">Let's Talk Floors</Link>

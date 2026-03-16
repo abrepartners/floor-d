@@ -1,4 +1,4 @@
-import { Coffee, Heart, Wrench, ShieldCheck } from "lucide-react";
+import { Coffee, Heart, Wrench, Layers } from "lucide-react";
 
 const services = [
   {
@@ -11,19 +11,19 @@ const services = [
     icon: Heart,
     title: "Every Budget Welcome",
     description:
-      "From $2/sq ft laminate to $11/sq ft designer hardwood — we treat every customer the same. Your budget is your business, not ours to judge.",
+      "Your budget is your business—not ours to judge. It's your home, and that's what matters. We treat every project the same, whether it's a whole house or a single room.",
   },
   {
     icon: Wrench,
     title: "Real Local Pros",
     description:
-      "Our installers know Central Arkansas homes inside and out. No subcontractors, no strangers — just skilled pros who take pride in their craft.",
+      "Our installers are your neighbors. They just happen to be skilled professionals who take pride in their craft.",
   },
   {
-    icon: ShieldCheck,
-    title: "We Stand Behind It",
+    icon: Layers,
+    title: "Right-Sized Solution",
     description:
-      "Industry-leading warranties on products and installation. If something's not right, we make it right. We're just down the road.",
+      "Whether you just need materials, also need installation, or you'd even like a design consultant—we've got you covered.",
   },
 ];
 
