@@ -1,21 +1,12 @@
 
 
-## Fix Blog Spacing and Typography
+## Update FAQ Answer for Installation Question
 
-**Root cause**: The `@tailwindcss/typography` plugin is installed as a dependency but is not registered in `tailwind.config.ts` plugins. This means all `prose` classes on the blog post page (headings, paragraphs, lists, tables, spacing) are having no effect.
+Update the answer for "Does Floor'd install the flooring too?" in `src/components/FAQ.tsx` (line 25-26) to reflect that installation is available with any purchase and Floor'd can do as much or as little as needed.
 
-### Changes
+**Current answer:**
+> "Yes. Floor'd provides professional installation with every purchase. Our installers are vetted local professionals who specialize in Arkansas homes — no subcontractors."
 
-**1. Register typography plugin in Tailwind config** (`tailwind.config.ts`)
-- Add `require("@tailwindcss/typography")` to the plugins array alongside `tailwindcss-animate`
-
-**2. Refine blog post prose styling** (`src/pages/BlogPost.tsx`)
-- Update the `prose` class configuration to ensure proper heading sizes, paragraph spacing, and table styling that matches the warm brand aesthetic
-- Add `prose-h2` and `prose-h3` size overrides for better visual hierarchy
-- Ensure FAQ sections and markdown tables render with correct spacing
-
-**3. Refine blog listing page spacing** (`src/pages/Blog.tsx`)
-- Minor padding/gap adjustments on the cards grid for better visual rhythm
-
-Once the typography plugin is active, the markdown content will automatically get proper heading sizes, paragraph spacing, list styling, table formatting, and blockquote styling -- fixing the core issue.
+**New answer:**
+> "Yes. Professional installation is available with any purchase. Whether you need full-service installation or just a helping hand on part of the project, we can do as much or as little as you need. Our installers are vetted local pros who specialize in Arkansas homes."
 
