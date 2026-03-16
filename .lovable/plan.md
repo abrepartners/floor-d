@@ -1,21 +1,21 @@
 
 
-## Fix Blog Spacing and Typography
+## Plan: Force-Clear Rate Limit and Trigger Email Processing
 
-**Root cause**: The `@tailwindcss/typography` plugin is installed as a dependency but is not registered in `tailwind.config.ts` plugins. This means all `prose` classes on the blog post page (headings, paragraphs, lists, tables, spacing) are having no effect.
+The two test emails (lead notification to miket@floordarkansas.com and confirmation to the submitter) are sitting in the queue, blocked by a rate-limit cooldown flag. Here's what I'll do:
 
-### Changes
+### Steps
 
-**1. Register typography plugin in Tailwind config** (`tailwind.config.ts`)
-- Add `require("@tailwindcss/typography")` to the plugins array alongside `tailwindcss-animate`
+1. **Reset the rate-limit cooldown** — Update `email_send_state` to set `retry_after_until` to `NULL`, allowing the queue processor to resume immediately.
 
-**2. Refine blog post prose styling** (`src/pages/BlogPost.tsx`)
-- Update the `prose` class configuration to ensure proper heading sizes, paragraph spacing, and table styling that matches the warm brand aesthetic
-- Add `prose-h2` and `prose-h3` size overrides for better visual hierarchy
-- Ensure FAQ sections and markdown tables render with correct spacing
+2. **Manually invoke the queue processor** — Call the `process-email-queue` edge function directly (with service-role auth) so the enqueued emails are processed right now instead of waiting for the next cron cycle.
 
-**3. Refine blog listing page spacing** (`src/pages/Blog.tsx`)
-- Minor padding/gap adjustments on the cards grid for better visual rhythm
+3. **Verify delivery** — Query `email_send_log` to confirm the two messages moved from `pending` to `sent` status.
 
-Once the typography plugin is active, the markdown content will automatically get proper heading sizes, paragraph spacing, list styling, table formatting, and blockquote styling -- fixing the core issue.
+4. **Report results** — Share the delivery status so you know whether Mike's inbox should have the email.
+
+### Technical Detail
+
+- The cooldown is a single row in `email_send_state` (id=1) with a `retry_after_until` timestamp that causes the processor to skip all messages when it's in the future.
+- The `process-email-queue` function requires a service-role JWT in the Authorization header, which is available via the edge function invocation tool.
 
