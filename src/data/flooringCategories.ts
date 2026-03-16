@@ -319,7 +319,7 @@ export const flooringCategories: FlooringCategory[] = [
       {
         title: "Budget Options Available",
         description:
-          "Quality carpet starts at just $2/sq ft installed. It's one of the most affordable ways to refresh a room.",
+          "Quality carpet is one of the most affordable ways to refresh a room.",
       },
     ],
     bestFor: [
