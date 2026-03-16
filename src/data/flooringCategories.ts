@@ -291,7 +291,7 @@ export const flooringCategories: FlooringCategory[] = [
     badge: "Cozy Pick",
     description:
       "Sometimes you just want to sink your toes into something soft. Carpet brings warmth, comfort, and coziness that hard surfaces can't match. At Floor'd, we carry everything from budget-friendly polyester to premium wool and nylon options — in more colors and textures than you can imagine. Perfect for bedrooms, playrooms, and anywhere comfort matters.",
-    priceRange: "$2–$8/sq ft installed",
+    
     image: "carpet",
     features: [
       "Ultra Soft & Comfortable",
