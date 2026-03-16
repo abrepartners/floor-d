@@ -41,7 +41,7 @@ LVP works in every room of your house. Kitchen, bathroom, living room, basement 
 
 If you love the look of hardwood but want to keep costs down, laminate is your friend:
 
-- **Great looks for less** — starting around $2/sq ft
+- **Great looks for less** — one of the most budget-friendly options
 - **Durable top layer** resists scratches and dents
 - **Easy to clean** — just sweep and damp mop
 - **Quick installation** — most rooms done in a day
