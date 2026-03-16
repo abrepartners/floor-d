@@ -88,7 +88,7 @@ Yes. Quality LVP has a wear layer that resists scratches from pet nails. It's on
 For high-traffic family homes, we recommend luxury vinyl plank for most rooms and porcelain tile for bathrooms and kitchens. Both are easy to maintain and hold up to the daily wear of family life.
 
 **How much does family-friendly flooring cost in Arkansas?**
-Family-friendly flooring in Central Arkansas typically ranges from $2/sq ft for laminate to $6-8/sq ft for premium LVP or tile, including installation. At Floor'd, we help you find the best option for your budget.`,
+Family-friendly flooring in Central Arkansas comes in a wide range of options to fit any budget. At Floor'd, we help you find the best option for your needs.`,
   },
   {
     slug: "hardwood-vs-lvp",
