@@ -180,6 +180,7 @@ Deno.serve(async (req) => {
         html: confirmHtml,
         from_name: "Floor'd",
         reply_to: 'miket@floordarkansas.com',
+        purpose: 'transactional',
         template_name: 'lead_confirmation',
       },
     })
