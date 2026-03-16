@@ -74,7 +74,7 @@ export function Header() {
               }`}
             >
               <Phone className="w-4 h-4" />
-              <span>(501) 555-1234</span>
+              <span>(501) 299-3871</span>
             </a>
             <Button variant="default" size="default" asChild>
               <Link to="/#contact">Let's Talk Floors</Link>
