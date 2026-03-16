@@ -243,7 +243,7 @@ Flooring costs for a 1,500 sq ft home in Central Arkansas vary based on material
 Laminate flooring offers great looks for the lowest cost. Quality luxury vinyl plank is also an excellent value with better durability and waterproofing.
 
 **Is it cheaper to install flooring yourself?**
-DIY can save on labor (roughly $1-3/sq ft), but mistakes can be costly to fix. Professional installation also typically comes with a workmanship warranty. We recommend DIY only for experienced homeowners working with click-lock LVP or laminate.
+DIY can save on labor costs, but mistakes can be costly to fix. Professional installation also typically comes with a workmanship warranty. We recommend DIY only for experienced homeowners working with click-lock LVP or laminate.
 
 **Does new flooring increase home value?**
 Yes. New flooring is one of the highest-ROI home improvements. Hardwood floors can return 70-80% of their cost at resale. Even LVP and quality laminate make homes more attractive to buyers.`,
