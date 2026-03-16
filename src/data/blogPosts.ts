@@ -240,7 +240,7 @@ The best way to know your actual cost is to get a personalized estimate. We'll c
 Flooring costs for a 1,500 sq ft home in Central Arkansas vary based on material and project complexity. At Floor'd in Little Rock, we provide free estimates and work with every budget.
 
 **What is the cheapest flooring option that still looks good?**
-Laminate flooring starting around $2/sq ft installed offers great looks for the lowest cost. Quality luxury vinyl plank at $3-4/sq ft is also an excellent value with better durability and waterproofing.
+Laminate flooring offers great looks for the lowest cost. Quality luxury vinyl plank is also an excellent value with better durability and waterproofing.
 
 **Is it cheaper to install flooring yourself?**
 DIY can save on labor (roughly $1-3/sq ft), but mistakes can be costly to fix. Professional installation also typically comes with a workmanship warranty. We recommend DIY only for experienced homeowners working with click-lock LVP or laminate.
