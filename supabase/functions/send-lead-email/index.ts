@@ -14,7 +14,7 @@ const FLOORING_LABELS: Record<string, string> = {
   other: 'Not Sure / Other',
 }
 
-function buildEmailHtml(data: {
+function buildLeadNotificationHtml(data: {
   firstName: string
   lastName: string
   email: string
@@ -54,6 +54,75 @@ function buildEmailHtml(data: {
 </html>`
 }
 
+function buildConfirmationHtml(data: {
+  firstName: string
+  flooringType: string
+  message: string
+}) {
+  const flooringLabel = FLOORING_LABELS[data.flooringType] || data.flooringType || 'Not specified'
+
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body style="margin: 0; padding: 0; background-color: #f9f7f4; font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a1a;">
+  <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+
+    <!-- Header -->
+    <div style="background: linear-gradient(135deg, #b8860b, #d4a843); padding: 32px; border-radius: 12px 12px 0 0; text-align: center;">
+      <h1 style="margin: 0; color: #fff; font-family: 'Playfair Display', Georgia, serif; font-size: 28px; letter-spacing: 0.5px;">Floor'd</h1>
+      <p style="margin: 8px 0 0; color: rgba(255,255,255,0.85); font-size: 14px;">Premium Flooring Solutions</p>
+    </div>
+
+    <!-- Body -->
+    <div style="background: #ffffff; border: 1px solid #e5e5e5; border-top: none; padding: 32px; border-radius: 0 0 12px 12px;">
+
+      <h2 style="margin: 0 0 8px; font-family: 'Playfair Display', Georgia, serif; font-size: 22px; color: #1a1a1a;">Thanks, ${data.firstName}!</h2>
+      <p style="margin: 0 0 24px; line-height: 1.6; color: #555;">We've received your request and a member of our team will be in touch shortly to discuss your project.</p>
+
+      <!-- Request Summary -->
+      <div style="background: #f9f7f4; border-radius: 8px; padding: 20px; margin-bottom: 24px; border-left: 4px solid #b8860b;">
+        <p style="margin: 0 0 8px; font-weight: 700; color: #b8860b; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Your Request Summary</p>
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr><td style="padding: 6px 0; color: #666; width: 120px;">Flooring Type</td><td style="padding: 6px 0; font-weight: 700;">${flooringLabel}</td></tr>
+          ${data.message ? `<tr><td style="padding: 6px 0; color: #666; vertical-align: top;">Details</td><td style="padding: 6px 0; line-height: 1.5;">${data.message.length > 200 ? data.message.substring(0, 200).replace(/\n/g, '<br>') + '…' : data.message.replace(/\n/g, '<br>')}</td></tr>` : ''}
+        </table>
+      </div>
+
+      <!-- What to Expect -->
+      <h3 style="margin: 0 0 12px; font-family: 'Playfair Display', Georgia, serif; font-size: 18px; color: #1a1a1a;">What Happens Next?</h3>
+      <ol style="margin: 0 0 24px; padding-left: 20px; line-height: 1.8; color: #555;">
+        <li>Our team reviews your project details</li>
+        <li>We'll reach out within 1 business day</li>
+        <li>We'll schedule a free consultation at your convenience</li>
+      </ol>
+
+      <!-- Divider -->
+      <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 24px 0;">
+
+      <!-- Showroom Info -->
+      <h3 style="margin: 0 0 12px; font-family: 'Playfair Display', Georgia, serif; font-size: 18px; color: #1a1a1a;">Visit Our Showroom</h3>
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px;">
+        <tr><td style="padding: 4px 0; color: #666; width: 80px;">Address</td><td style="padding: 4px 0;">5311 S 31st St, Fort Smith, AR 72901</td></tr>
+        <tr><td style="padding: 4px 0; color: #666;">Phone</td><td style="padding: 4px 0;"><a href="tel:+14792352434" style="color: #b8860b; text-decoration: none;">(479) 235-2434</a></td></tr>
+        <tr><td style="padding: 4px 0; color: #666;">Hours</td><td style="padding: 4px 0;">Mon–Fri 9am–5pm · Sat 10am–2pm</td></tr>
+      </table>
+
+      <p style="margin: 0; font-size: 13px; color: #999;">Have questions? Simply reply to this email and it will go directly to our team.</p>
+    </div>
+
+    <!-- Footer -->
+    <div style="text-align: center; padding: 20px; font-size: 12px; color: #999;">
+      <p style="margin: 0;">© ${new Date().getFullYear()} Floor'd Arkansas · All rights reserved</p>
+    </div>
+  </div>
+</body>
+</html>`
+}
+
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders })
@@ -70,31 +139,53 @@ Deno.serve(async (req) => {
     }
 
     const flooringLabel = FLOORING_LABELS[flooringType] || flooringType || 'Not specified'
-    const subject = `New Floor'd Lead: ${flooringLabel} — ${firstName} ${lastName}`
-    const html = buildEmailHtml({ firstName, lastName, email, phone, flooringType, message })
+    const leadSubject = `New Floor'd Lead: ${flooringLabel} — ${firstName} ${lastName}`
+    const leadHtml = buildLeadNotificationHtml({ firstName, lastName, email, phone, flooringType, message })
+
+    const confirmSubject = `We got your request, ${firstName}!`
+    const confirmHtml = buildConfirmationHtml({ firstName, flooringType, message })
 
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
     const supabase = createClient(supabaseUrl, supabaseServiceKey)
 
-    const { error: enqueueError } = await supabase.rpc('enqueue_email', {
+    // 1. Lead notification to Mike
+    const { error: leadError } = await supabase.rpc('enqueue_email', {
       queue_name: 'transactional_emails',
       payload: {
         to: 'miket@floordarkansas.com',
-        subject,
-        html,
+        subject: leadSubject,
+        html: leadHtml,
         from_name: "Floor'd Website",
         reply_to: email,
         template_name: 'lead_notification',
       },
     })
 
-    if (enqueueError) {
-      console.error('Enqueue error:', enqueueError)
+    if (leadError) {
+      console.error('Lead enqueue error:', leadError)
       return new Response(JSON.stringify({ error: 'Failed to send' }), {
         status: 500,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       })
+    }
+
+    // 2. Confirmation email to submitter
+    const { error: confirmError } = await supabase.rpc('enqueue_email', {
+      queue_name: 'transactional_emails',
+      payload: {
+        to: email,
+        subject: confirmSubject,
+        html: confirmHtml,
+        from_name: "Floor'd",
+        reply_to: 'miket@floordarkansas.com',
+        template_name: 'lead_confirmation',
+      },
+    })
+
+    if (confirmError) {
+      console.error('Confirmation enqueue error:', confirmError)
+      // Non-fatal: lead was already sent, just log the error
     }
 
     return new Response(JSON.stringify({ success: true }), {
