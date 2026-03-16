@@ -282,7 +282,6 @@ If you want a floor that'll outlast the kitchen itself:
 - Handles heavy foot traffic and dropped cookware
 - Huge variety of looks: wood-grain, marble, concrete, geometric
 - Compatible with radiant floor heating
-- $5-10/sq ft installed
 
 ### What About Hardwood in the Kitchen?
 
