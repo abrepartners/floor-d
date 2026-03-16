@@ -273,7 +273,6 @@ LVP has become the go-to kitchen floor across Central Arkansas, and for good rea
 - Looks like real hardwood or stone
 - Easy to clean — spills wipe right up
 - Cushioned underfoot reduces fatigue
-- $3-6/sq ft installed
 
 ### Porcelain Tile — The Timeless Choice
 
