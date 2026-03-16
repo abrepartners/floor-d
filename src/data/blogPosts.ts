@@ -191,7 +191,7 @@ Hardwood can last 50+ years with periodic refinishing. LVP typically lasts 15-25
     title:
       "How Much Does New Flooring Cost? A Real Talk Guide for Arkansas Homeowners",
     excerpt:
-      "New flooring in Central Arkansas typically costs between $2 and $11 per square foot installed. A typical 1,000 sq ft project ranges from $2,000 for laminate to $11,000 for premium hardwood. Here's what actually drives the price.",
+      "New flooring in Central Arkansas varies based on material, room complexity, and prep work. Here's what actually drives the price.",
     date: "2026-03-01",
     readTime: "5 min read",
     category: "Cost Guide",
