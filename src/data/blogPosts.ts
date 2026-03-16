@@ -79,7 +79,7 @@ Photos and specs only tell part of the story. Stop by our showroom in Little Roc
 ## Frequently Asked Questions
 
 **What is the most durable flooring for pets?**
-Luxury vinyl plank and porcelain tile are the most durable options for homes with pets. Both resist scratches from pet nails and are easy to clean. At Floor'd in Little Rock, AR, we carry pet-friendly options starting at $2/sq ft.
+Luxury vinyl plank and porcelain tile are the most durable options for homes with pets. Both resist scratches from pet nails and are easy to clean. At Floor'd in Little Rock, AR, we carry pet-friendly options for every budget.
 
 **Can luxury vinyl plank handle dog scratches?**
 Yes. Quality LVP has a wear layer that resists scratches from pet nails. It's one of the top reasons families in Central Arkansas choose LVP for their homes.
