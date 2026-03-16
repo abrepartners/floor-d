@@ -197,20 +197,7 @@ Hardwood can last 50+ years with periodic refinishing. LVP typically lasts 15-25
     category: "Cost Guide",
     content: `## Let's Talk Numbers (Without the Sticker Shock)
 
-We know cost is usually the first thing on your mind. And that's totally fine — we're not going to pretend budget doesn't matter. At Floor'd in Little Rock, we work with every budget, from starter homes to dream builds. Here's what things actually cost.
-
-## Flooring Costs at a Glance
-
-| Flooring Type | Material Cost/sq ft | Installed Cost/sq ft | 1,000 sq ft Total |
-|--------------|--------------------|-----------------------|-------------------|
-| **Laminate** | $1-3 | $2-5 | $2,000-5,000 |
-| **Luxury Vinyl Plank** | $2-5 | $3-7 | $3,000-7,000 |
-| **Porcelain Tile** | $2-8 | $5-10 | $5,000-10,000 |
-| **Engineered Hardwood** | $3-8 | $5-10 | $5,000-10,000 |
-| **Solid Hardwood** | $4-11 | $6-14 | $6,000-14,000 |
-| **Carpet** | $1-4 | $2-6 | $2,000-6,000 |
-
-*Prices reflect Central Arkansas market rates as of 2026. Your actual cost depends on the specific product, room complexity, and prep work needed.*
+We know cost is usually the first thing on your mind. And that's totally fine — we're not going to pretend budget doesn't matter. At Floor'd in Little Rock, we work with every budget, from starter homes to dream builds.
 
 ## What Actually Affects Your Price
 
