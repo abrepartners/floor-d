@@ -153,11 +153,12 @@ Deno.serve(async (req) => {
 
     const SENDER_DOMAIN = 'notify.floordarkansas.com'
     const FROM_DOMAIN = 'floordarkansas.com'
+    // LOVABLE_RUN_ID is not available as an edge function env var.
+    // It must be set manually as a secret for transactional emails to work.
     const runId = Deno.env.get('LOVABLE_RUN_ID')
-    console.log('LOVABLE_RUN_ID:', runId ?? 'NOT SET')
-    
     if (!runId) {
-      return new Response(JSON.stringify({ error: 'Missing LOVABLE_RUN_ID' }), {
+      console.error('LOVABLE_RUN_ID secret is not configured. Transactional emails cannot be sent.')
+      return new Response(JSON.stringify({ error: 'Email configuration incomplete' }), {
         status: 500,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       })
