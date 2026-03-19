@@ -154,14 +154,10 @@ Deno.serve(async (req) => {
     const SENDER_DOMAIN = 'notify.floordarkansas.com'
     const FROM_DOMAIN = 'floordarkansas.com'
     const runId = Deno.env.get('LOVABLE_RUN_ID')
-    
-    // Debug: log available env var names that might contain run info
-    const envKeys = [...Deno.env.toObject()].map(([k]) => k).filter(k => k.includes('LOVABLE') || k.includes('RUN') || k.includes('DEPLOY'))
-    console.log('Available env keys:', JSON.stringify(envKeys))
-    console.log('LOVABLE_RUN_ID value:', runId ? 'SET' : 'NOT SET')
+    console.log('LOVABLE_RUN_ID:', runId ?? 'NOT SET')
     
     if (!runId) {
-      return new Response(JSON.stringify({ error: 'Server configuration error: missing run ID', available_keys: envKeys }), {
+      return new Response(JSON.stringify({ error: 'Missing LOVABLE_RUN_ID' }), {
         status: 500,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       })
