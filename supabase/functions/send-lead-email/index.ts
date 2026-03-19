@@ -153,7 +153,14 @@ Deno.serve(async (req) => {
 
     const SENDER_DOMAIN = 'notify.floordarkansas.com'
     const FROM_DOMAIN = 'floordarkansas.com'
-    const runId = Deno.env.get('LOVABLE_RUN_ID') || 'wpczgwxsriezaubncuom'
+    const runId = Deno.env.get('LOVABLE_RUN_ID')
+    if (!runId) {
+      console.error('LOVABLE_RUN_ID not set')
+      return new Response(JSON.stringify({ error: 'Server configuration error: missing run ID' }), {
+        status: 500,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      })
+    }
 
     const leadMessageId = crypto.randomUUID()
     const confirmMessageId = crypto.randomUUID()
