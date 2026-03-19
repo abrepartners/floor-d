@@ -141,9 +141,11 @@ Deno.serve(async (req) => {
     const flooringLabel = FLOORING_LABELS[flooringType] || flooringType || 'Not specified'
     const leadSubject = `New Floor'd Lead: ${flooringLabel} — ${firstName} ${lastName}`
     const leadHtml = buildLeadNotificationHtml({ firstName, lastName, email, phone, flooringType, message })
+    const leadText = `New lead from Floor'd Website\n\nName: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nFlooring Type: ${flooringLabel}\n${message ? `Message: ${message}` : ''}`
 
     const confirmSubject = `We got your request, ${firstName}!`
     const confirmHtml = buildConfirmationHtml({ firstName, flooringType, message })
+    const confirmText = `Thanks, ${firstName}! We've received your request for ${flooringLabel} flooring and a member of our team will be in touch shortly.\n\nWhat Happens Next?\n1. Our team reviews your project details\n2. We'll reach out within 1 business day\n3. We'll schedule a free consultation\n\nVisit Our Showroom: 5311 S 31st St, Fort Smith, AR 72901\nPhone: (479) 235-2434`
 
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
@@ -151,7 +153,16 @@ Deno.serve(async (req) => {
 
     const SENDER_DOMAIN = 'notify.floordarkansas.com'
     const FROM_DOMAIN = 'floordarkansas.com'
-    const runId = Deno.env.get('LOVABLE_RUN_ID') || 'wpczgwxsriezaubncuom'
+    // LOVABLE_RUN_ID is not available as an edge function env var.
+    // It must be set manually as a secret for transactional emails to work.
+    const runId = Deno.env.get('LOVABLE_RUN_ID')
+    if (!runId) {
+      console.error('LOVABLE_RUN_ID secret is not configured. Transactional emails cannot be sent.')
+      return new Response(JSON.stringify({ error: 'Email configuration incomplete' }), {
+        status: 500,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      })
+    }
 
     const leadMessageId = crypto.randomUUID()
     const confirmMessageId = crypto.randomUUID()
@@ -167,6 +178,7 @@ Deno.serve(async (req) => {
         sender_domain: SENDER_DOMAIN,
         subject: leadSubject,
         html: leadHtml,
+        text: leadText,
         purpose: 'transactional',
         label: 'lead_notification',
         reply_to: email,
@@ -193,6 +205,7 @@ Deno.serve(async (req) => {
         sender_domain: SENDER_DOMAIN,
         subject: confirmSubject,
         html: confirmHtml,
+        text: confirmText,
         purpose: 'transactional',
         label: 'lead_confirmation',
         reply_to: 'miket@floordarkansas.com',

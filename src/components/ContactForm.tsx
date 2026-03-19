@@ -147,7 +147,7 @@ export function ContactForm({
                 </div>
                 <div>
                   <p className="font-heading text-lg text-foreground">Give Us a Call</p>
-                  <a href="tel:+15012993871" className="text-muted-foreground text-sm hover:text-primary transition-colors">(501) 299-3871</a>
+                  <a href="tel:+15012973871" className="text-muted-foreground text-sm hover:text-primary transition-colors">(501) 297-3871</a>
                 </div>
               </div>
               <div className="flex items-start gap-4 group">
