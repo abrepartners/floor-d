@@ -141,9 +141,11 @@ Deno.serve(async (req) => {
     const flooringLabel = FLOORING_LABELS[flooringType] || flooringType || 'Not specified'
     const leadSubject = `New Floor'd Lead: ${flooringLabel} — ${firstName} ${lastName}`
     const leadHtml = buildLeadNotificationHtml({ firstName, lastName, email, phone, flooringType, message })
+    const leadText = `New lead from Floor'd Website\n\nName: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nFlooring Type: ${flooringLabel}\n${message ? `Message: ${message}` : ''}`
 
     const confirmSubject = `We got your request, ${firstName}!`
     const confirmHtml = buildConfirmationHtml({ firstName, flooringType, message })
+    const confirmText = `Thanks, ${firstName}! We've received your request for ${flooringLabel} flooring and a member of our team will be in touch shortly.\n\nWhat Happens Next?\n1. Our team reviews your project details\n2. We'll reach out within 1 business day\n3. We'll schedule a free consultation\n\nVisit Our Showroom: 5311 S 31st St, Fort Smith, AR 72901\nPhone: (479) 235-2434`
 
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
