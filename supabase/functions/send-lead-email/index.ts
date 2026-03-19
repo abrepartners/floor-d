@@ -196,6 +196,7 @@ Deno.serve(async (req) => {
         sender_domain: SENDER_DOMAIN,
         subject: confirmSubject,
         html: confirmHtml,
+        text: confirmText,
         purpose: 'transactional',
         label: 'lead_confirmation',
         reply_to: 'miket@floordarkansas.com',
