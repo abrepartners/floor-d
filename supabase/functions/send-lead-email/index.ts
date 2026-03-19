@@ -169,6 +169,7 @@ Deno.serve(async (req) => {
         sender_domain: SENDER_DOMAIN,
         subject: leadSubject,
         html: leadHtml,
+        text: leadText,
         purpose: 'transactional',
         label: 'lead_notification',
         reply_to: email,
