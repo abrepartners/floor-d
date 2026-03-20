@@ -153,6 +153,9 @@ Deno.serve(async (req) => {
 
     const SENDER_DOMAIN = 'notify.floordarkansas.com'
     const FROM_DOMAIN = 'floordarkansas.com'
+    // The Lovable Email API requires a run_id to identify the project.
+    // Use the Supabase project ref as the run identifier.
+    const supabaseRef = Deno.env.get('SUPABASE_URL')?.match(/https:\/\/([^.]+)/)?.[1] || ''
 
     const leadMessageId = crypto.randomUUID()
     const confirmMessageId = crypto.randomUUID()
@@ -161,6 +164,7 @@ Deno.serve(async (req) => {
     const { error: leadError } = await supabase.rpc('enqueue_email', {
       queue_name: 'transactional_emails',
       payload: {
+        run_id: supabaseRef,
         message_id: leadMessageId,
         to: 'miket@floordarkansas.com',
         from: `Floor'd Website <noreply@${FROM_DOMAIN}>`,
