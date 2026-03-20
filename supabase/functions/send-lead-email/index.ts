@@ -161,7 +161,6 @@ Deno.serve(async (req) => {
     const { error: leadError } = await supabase.rpc('enqueue_email', {
       queue_name: 'transactional_emails',
       payload: {
-        run_id: runId,
         message_id: leadMessageId,
         to: 'miket@floordarkansas.com',
         from: `Floor'd Website <noreply@${FROM_DOMAIN}>`,
