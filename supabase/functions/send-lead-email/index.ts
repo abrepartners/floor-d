@@ -153,16 +153,8 @@ Deno.serve(async (req) => {
 
     const SENDER_DOMAIN = 'notify.floordarkansas.com'
     const FROM_DOMAIN = 'floordarkansas.com'
-    // LOVABLE_RUN_ID is not available as an edge function env var.
-    // It must be set manually as a secret for transactional emails to work.
-    const runId = Deno.env.get('LOVABLE_RUN_ID')
-    if (!runId) {
-      console.error('LOVABLE_RUN_ID secret is not configured. Transactional emails cannot be sent.')
-      return new Response(JSON.stringify({ error: 'Email configuration incomplete' }), {
-        status: 500,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      })
-    }
+    // The Lovable Email API requires a run_id to identify the project.
+    const RUN_ID = 'wpczgwxsriezaubncuom'
 
     const leadMessageId = crypto.randomUUID()
     const confirmMessageId = crypto.randomUUID()
@@ -171,7 +163,7 @@ Deno.serve(async (req) => {
     const { error: leadError } = await supabase.rpc('enqueue_email', {
       queue_name: 'transactional_emails',
       payload: {
-        run_id: runId,
+        run_id: RUN_ID,
         message_id: leadMessageId,
         to: 'miket@floordarkansas.com',
         from: `Floor'd Website <noreply@${FROM_DOMAIN}>`,
@@ -198,7 +190,7 @@ Deno.serve(async (req) => {
     const { error: confirmError } = await supabase.rpc('enqueue_email', {
       queue_name: 'transactional_emails',
       payload: {
-        run_id: runId,
+        run_id: RUN_ID,
         message_id: confirmMessageId,
         to: email,
         from: `Floor'd <noreply@${FROM_DOMAIN}>`,
