@@ -154,8 +154,7 @@ Deno.serve(async (req) => {
     const SENDER_DOMAIN = 'notify.floordarkansas.com'
     const FROM_DOMAIN = 'floordarkansas.com'
     // The Lovable Email API requires a run_id to identify the project.
-    // Use the Supabase project ref as the run identifier.
-    const supabaseRef = Deno.env.get('SUPABASE_URL')?.match(/https:\/\/([^.]+)/)?.[1] || ''
+    const RUN_ID = 'wpczgwxsriezaubncuom'
 
     const leadMessageId = crypto.randomUUID()
     const confirmMessageId = crypto.randomUUID()
