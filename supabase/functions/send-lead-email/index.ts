@@ -12,6 +12,26 @@ const FLOORING_LABELS: Record<string, string> = {
   other: 'Not Sure / Other',
 }
 
+// Escape HTML special characters to prevent XSS in email templates
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
+
+// Validate email format
+function isValidEmail(email: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
+
+// Validate phone format (digits, spaces, dashes, parens, plus)
+function isValidPhone(phone: string): boolean {
+  return /^[0-9\s\-\(\)\+\.]{7,20}$/.test(phone)
+}
+
 const RESEND_API_URL = 'https://api.resend.com/emails'
 const FROM_ADDRESS = 'Floor\'d <noreply@floordarkansas.com>'
 const LEAD_RECIPIENT = 'miket@floordarkansas.com'
