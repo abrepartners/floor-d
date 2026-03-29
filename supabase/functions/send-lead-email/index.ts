@@ -67,7 +67,7 @@ function buildLeadNotificationHtml(data: {
     </table>
     ${data.message ? `<div style="background: #f9f7f4; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
       <p style="margin: 0 0 8px; font-weight: 600; color: #666; font-size: 13px; text-transform: uppercase;">Project Description</p>
-      <p style="margin: 0; line-height: 1.6;">${data.message.replace(/\n/g, '<br>')}</p>
+      <p style="margin: 0; line-height: 1.6;">${escapeHtml(data.message).replace(/\n/g, '<br>')}</p>
     </div>` : ''}
     <p style="margin: 0; font-size: 12px; color: #999;">Submitted: ${timestamp} · Source: floord.lovable.app</p>
   </div>
