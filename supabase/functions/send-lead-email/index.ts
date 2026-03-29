@@ -12,6 +12,26 @@ const FLOORING_LABELS: Record<string, string> = {
   other: 'Not Sure / Other',
 }
 
+// Escape HTML special characters to prevent XSS in email templates
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
+
+// Validate email format
+function isValidEmail(email: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
+
+// Validate phone format (digits, spaces, dashes, parens, plus)
+function isValidPhone(phone: string): boolean {
+  return /^[0-9\s\-\(\)\+\.]{7,20}$/.test(phone)
+}
+
 const RESEND_API_URL = 'https://api.resend.com/emails'
 const FROM_ADDRESS = 'Floor\'d <noreply@floordarkansas.com>'
 const LEAD_RECIPIENT = 'miket@floordarkansas.com'
@@ -24,7 +44,7 @@ function buildLeadNotificationHtml(data: {
   flooringType: string
   message: string
 }) {
-  const flooringLabel = FLOORING_LABELS[data.flooringType] || data.flooringType || 'Not specified'
+  const flooringLabel = escapeHtml(FLOORING_LABELS[data.flooringType] || data.flooringType || 'Not specified')
   const timestamp = new Date().toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'short' })
 
   return `<!DOCTYPE html>
@@ -37,9 +57,9 @@ function buildLeadNotificationHtml(data: {
   <div style="border: 1px solid #e5e5e5; border-top: none; border-radius: 0 0 12px 12px; padding: 24px;">
     <h2 style="margin: 0 0 16px; font-size: 18px; color: #b8860b;">Contact Information</h2>
     <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
-      <tr><td style="padding: 8px 0; color: #666; width: 120px;">Name</td><td style="padding: 8px 0; font-weight: 600;">${data.firstName} ${data.lastName}</td></tr>
-      <tr><td style="padding: 8px 0; color: #666;">Email</td><td style="padding: 8px 0;"><a href="mailto:${data.email}" style="color: #b8860b;">${data.email}</a></td></tr>
-      <tr><td style="padding: 8px 0; color: #666;">Phone</td><td style="padding: 8px 0;"><a href="tel:${data.phone}" style="color: #b8860b;">${data.phone}</a></td></tr>
+      <tr><td style="padding: 8px 0; color: #666; width: 120px;">Name</td><td style="padding: 8px 0; font-weight: 600;">${escapeHtml(data.firstName)} ${escapeHtml(data.lastName)}</td></tr>
+      <tr><td style="padding: 8px 0; color: #666;">Email</td><td style="padding: 8px 0;"><a href="mailto:${encodeURIComponent(data.email)}" style="color: #b8860b;">${escapeHtml(data.email)}</a></td></tr>
+      <tr><td style="padding: 8px 0; color: #666;">Phone</td><td style="padding: 8px 0;"><a href="tel:${encodeURIComponent(data.phone)}" style="color: #b8860b;">${escapeHtml(data.phone)}</a></td></tr>
     </table>
     <h2 style="margin: 0 0 16px; font-size: 18px; color: #b8860b;">Project Details</h2>
     <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
@@ -47,7 +67,7 @@ function buildLeadNotificationHtml(data: {
     </table>
     ${data.message ? `<div style="background: #f9f7f4; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
       <p style="margin: 0 0 8px; font-weight: 600; color: #666; font-size: 13px; text-transform: uppercase;">Project Description</p>
-      <p style="margin: 0; line-height: 1.6;">${data.message.replace(/\n/g, '<br>')}</p>
+      <p style="margin: 0; line-height: 1.6;">${escapeHtml(data.message).replace(/\n/g, '<br>')}</p>
     </div>` : ''}
     <p style="margin: 0; font-size: 12px; color: #999;">Submitted: ${timestamp} · Source: floord.lovable.app</p>
   </div>
@@ -60,7 +80,7 @@ function buildConfirmationHtml(data: {
   flooringType: string
   message: string
 }) {
-  const flooringLabel = FLOORING_LABELS[data.flooringType] || data.flooringType || 'Not specified'
+  const flooringLabel = escapeHtml(FLOORING_LABELS[data.flooringType] || data.flooringType || 'Not specified')
 
   return `<!DOCTYPE html>
 <html>
@@ -72,13 +92,13 @@ function buildConfirmationHtml(data: {
       <p style="margin: 8px 0 0; color: rgba(255,255,255,0.85); font-size: 14px;">Premium Flooring Solutions</p>
     </div>
     <div style="background: #ffffff; border: 1px solid #e5e5e5; border-top: none; padding: 32px; border-radius: 0 0 12px 12px;">
-      <h2 style="margin: 0 0 8px; font-family: Georgia, serif; font-size: 22px; color: #1a1a1a;">Thanks, ${data.firstName}!</h2>
+      <h2 style="margin: 0 0 8px; font-family: Georgia, serif; font-size: 22px; color: #1a1a1a;">Thanks, ${escapeHtml(data.firstName)}!</h2>
       <p style="margin: 0 0 24px; line-height: 1.6; color: #555;">We've received your request and a member of our team will be in touch shortly to discuss your project.</p>
       <div style="background: #f9f7f4; border-radius: 8px; padding: 20px; margin-bottom: 24px; border-left: 4px solid #b8860b;">
         <p style="margin: 0 0 8px; font-weight: 700; color: #b8860b; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Your Request Summary</p>
         <table style="width: 100%; border-collapse: collapse;">
           <tr><td style="padding: 6px 0; color: #666; width: 120px;">Flooring Type</td><td style="padding: 6px 0; font-weight: 700;">${flooringLabel}</td></tr>
-          ${data.message ? `<tr><td style="padding: 6px 0; color: #666; vertical-align: top;">Details</td><td style="padding: 6px 0; line-height: 1.5;">${data.message.length > 200 ? data.message.substring(0, 200).replace(/\n/g, '<br>') + '…' : data.message.replace(/\n/g, '<br>')}</td></tr>` : ''}
+          ${data.message ? `<tr><td style="padding: 6px 0; color: #666; vertical-align: top;">Details</td><td style="padding: 6px 0; line-height: 1.5;">${escapeHtml(data.message.length > 200 ? data.message.substring(0, 200) + '…' : data.message).replace(/\n/g, '<br>')}</td></tr>` : ''}
         </table>
       </div>
       <h3 style="margin: 0 0 12px; font-family: Georgia, serif; font-size: 18px; color: #1a1a1a;">What Happens Next?</h3>
@@ -151,10 +171,30 @@ Deno.serve(async (req) => {
       })
     }
 
-    const { firstName, lastName, email, phone, flooringType, message } = await req.json()
+    const body = await req.json()
+    const firstName = String(body.firstName || '').trim().slice(0, 100)
+    const lastName = String(body.lastName || '').trim().slice(0, 100)
+    const email = String(body.email || '').trim().slice(0, 255)
+    const phone = String(body.phone || '').trim().slice(0, 30)
+    const flooringType = String(body.flooringType || '').trim().slice(0, 50)
+    const message = String(body.message || '').trim().slice(0, 2000)
 
     if (!firstName || !lastName || !email || !phone) {
       return new Response(JSON.stringify({ error: 'Missing required fields' }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      })
+    }
+
+    if (!isValidEmail(email)) {
+      return new Response(JSON.stringify({ error: 'Invalid email address' }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      })
+    }
+
+    if (!isValidPhone(phone)) {
+      return new Response(JSON.stringify({ error: 'Invalid phone number' }), {
         status: 400,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       })
