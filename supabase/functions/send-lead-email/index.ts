@@ -44,7 +44,7 @@ function buildLeadNotificationHtml(data: {
   flooringType: string
   message: string
 }) {
-  const flooringLabel = FLOORING_LABELS[data.flooringType] || data.flooringType || 'Not specified'
+  const flooringLabel = escapeHtml(FLOORING_LABELS[data.flooringType] || data.flooringType || 'Not specified')
   const timestamp = new Date().toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'short' })
 
   return `<!DOCTYPE html>
