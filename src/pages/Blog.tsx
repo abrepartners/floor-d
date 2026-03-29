@@ -22,18 +22,18 @@ export default function Blog() {
             "@type": "Blog",
             name: "Floor'd Blog",
             description: "Flooring tips, guides, and advice from Floor'd in Little Rock, AR.",
-            url: "https://floordflooringandfinishes.com/blog",
+            url: "https://floordarkansas.com/blog",
             publisher: {
               "@type": "Organization",
               name: "Floor'd Flooring + Finishes",
-              url: "https://floordflooringandfinishes.com",
+              url: "https://floordarkansas.com",
             },
             blogPost: blogPosts.map((p) => ({
               "@type": "BlogPosting",
               headline: p.title,
               description: p.excerpt,
               datePublished: p.date,
-              url: `https://floordflooringandfinishes.com/blog/${p.slug}`,
+              url: `https://floordarkansas.com/blog/${p.slug}`,
             })),
           })}
         </script>

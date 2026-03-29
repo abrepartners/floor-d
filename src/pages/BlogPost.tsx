@@ -36,16 +36,16 @@ export default function BlogPost() {
           author: {
             "@type": "Organization",
             name: "Floor'd Flooring + Finishes",
-            url: "https://floordflooringandfinishes.com",
+            url: "https://floordarkansas.com",
           },
           publisher: {
             "@type": "Organization",
             name: "Floor'd Flooring + Finishes",
-            url: "https://floordflooringandfinishes.com",
+            url: "https://floordarkansas.com",
           },
           mainEntityOfPage: {
             "@type": "WebPage",
-            "@id": `https://floordflooringandfinishes.com/blog/${post.slug}`,
+            "@id": `https://floordarkansas.com/blog/${post.slug}`,
           },
         }}
       />

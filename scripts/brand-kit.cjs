@@ -227,7 +227,7 @@ const doc = new Document({
           spacing: { after: 60 },
           children: [
             new TextRun({ text: "Website: ", bold: true }),
-            new TextRun("floordflooringandfinishes.com"),
+            new TextRun("floordarkansas.com"),
           ],
         }),
 
@@ -557,7 +557,7 @@ const doc = new Document({
           spacing: { after: 60 },
           children: [
             new TextRun({ text: "Domain: ", bold: true }),
-            new TextRun("floordflooringandfinishes.com"),
+            new TextRun("floordarkansas.com"),
           ],
         }),
         new Paragraph({

@@ -13,7 +13,7 @@ interface SEOProps {
   image?: string;
 }
 
-const BASE_URL = "https://floordflooringandfinishes.com";
+const BASE_URL = "https://floordarkansas.com";
 
 export function SEO({
   title,
