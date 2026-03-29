@@ -57,9 +57,9 @@ function buildLeadNotificationHtml(data: {
   <div style="border: 1px solid #e5e5e5; border-top: none; border-radius: 0 0 12px 12px; padding: 24px;">
     <h2 style="margin: 0 0 16px; font-size: 18px; color: #b8860b;">Contact Information</h2>
     <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
-      <tr><td style="padding: 8px 0; color: #666; width: 120px;">Name</td><td style="padding: 8px 0; font-weight: 600;">${data.firstName} ${data.lastName}</td></tr>
-      <tr><td style="padding: 8px 0; color: #666;">Email</td><td style="padding: 8px 0;"><a href="mailto:${data.email}" style="color: #b8860b;">${data.email}</a></td></tr>
-      <tr><td style="padding: 8px 0; color: #666;">Phone</td><td style="padding: 8px 0;"><a href="tel:${data.phone}" style="color: #b8860b;">${data.phone}</a></td></tr>
+      <tr><td style="padding: 8px 0; color: #666; width: 120px;">Name</td><td style="padding: 8px 0; font-weight: 600;">${escapeHtml(data.firstName)} ${escapeHtml(data.lastName)}</td></tr>
+      <tr><td style="padding: 8px 0; color: #666;">Email</td><td style="padding: 8px 0;"><a href="mailto:${encodeURIComponent(data.email)}" style="color: #b8860b;">${escapeHtml(data.email)}</a></td></tr>
+      <tr><td style="padding: 8px 0; color: #666;">Phone</td><td style="padding: 8px 0;"><a href="tel:${encodeURIComponent(data.phone)}" style="color: #b8860b;">${escapeHtml(data.phone)}</a></td></tr>
     </table>
     <h2 style="margin: 0 0 16px; font-size: 18px; color: #b8860b;">Project Details</h2>
     <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
