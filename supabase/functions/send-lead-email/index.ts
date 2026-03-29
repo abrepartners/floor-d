@@ -171,10 +171,30 @@ Deno.serve(async (req) => {
       })
     }
 
-    const { firstName, lastName, email, phone, flooringType, message } = await req.json()
+    const body = await req.json()
+    const firstName = String(body.firstName || '').trim().slice(0, 100)
+    const lastName = String(body.lastName || '').trim().slice(0, 100)
+    const email = String(body.email || '').trim().slice(0, 255)
+    const phone = String(body.phone || '').trim().slice(0, 30)
+    const flooringType = String(body.flooringType || '').trim().slice(0, 50)
+    const message = String(body.message || '').trim().slice(0, 2000)
 
     if (!firstName || !lastName || !email || !phone) {
       return new Response(JSON.stringify({ error: 'Missing required fields' }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      })
+    }
+
+    if (!isValidEmail(email)) {
+      return new Response(JSON.stringify({ error: 'Invalid email address' }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      })
+    }
+
+    if (!isValidPhone(phone)) {
+      return new Response(JSON.stringify({ error: 'Invalid phone number' }), {
         status: 400,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       })
