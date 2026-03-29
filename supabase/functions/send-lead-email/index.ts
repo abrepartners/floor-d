@@ -80,7 +80,7 @@ function buildConfirmationHtml(data: {
   flooringType: string
   message: string
 }) {
-  const flooringLabel = FLOORING_LABELS[data.flooringType] || data.flooringType || 'Not specified'
+  const flooringLabel = escapeHtml(FLOORING_LABELS[data.flooringType] || data.flooringType || 'Not specified')
 
   return `<!DOCTYPE html>
 <html>
@@ -92,13 +92,13 @@ function buildConfirmationHtml(data: {
       <p style="margin: 8px 0 0; color: rgba(255,255,255,0.85); font-size: 14px;">Premium Flooring Solutions</p>
     </div>
     <div style="background: #ffffff; border: 1px solid #e5e5e5; border-top: none; padding: 32px; border-radius: 0 0 12px 12px;">
-      <h2 style="margin: 0 0 8px; font-family: Georgia, serif; font-size: 22px; color: #1a1a1a;">Thanks, ${data.firstName}!</h2>
+      <h2 style="margin: 0 0 8px; font-family: Georgia, serif; font-size: 22px; color: #1a1a1a;">Thanks, ${escapeHtml(data.firstName)}!</h2>
       <p style="margin: 0 0 24px; line-height: 1.6; color: #555;">We've received your request and a member of our team will be in touch shortly to discuss your project.</p>
       <div style="background: #f9f7f4; border-radius: 8px; padding: 20px; margin-bottom: 24px; border-left: 4px solid #b8860b;">
         <p style="margin: 0 0 8px; font-weight: 700; color: #b8860b; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Your Request Summary</p>
         <table style="width: 100%; border-collapse: collapse;">
           <tr><td style="padding: 6px 0; color: #666; width: 120px;">Flooring Type</td><td style="padding: 6px 0; font-weight: 700;">${flooringLabel}</td></tr>
-          ${data.message ? `<tr><td style="padding: 6px 0; color: #666; vertical-align: top;">Details</td><td style="padding: 6px 0; line-height: 1.5;">${data.message.length > 200 ? data.message.substring(0, 200).replace(/\n/g, '<br>') + '…' : data.message.replace(/\n/g, '<br>')}</td></tr>` : ''}
+          ${data.message ? `<tr><td style="padding: 6px 0; color: #666; vertical-align: top;">Details</td><td style="padding: 6px 0; line-height: 1.5;">${escapeHtml(data.message.length > 200 ? data.message.substring(0, 200) + '…' : data.message).replace(/\n/g, '<br>')}</td></tr>` : ''}
         </table>
       </div>
       <h3 style="margin: 0 0 12px; font-family: Georgia, serif; font-size: 18px; color: #1a1a1a;">What Happens Next?</h3>
